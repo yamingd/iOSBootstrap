@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = "iOSBootstrap"
   s.version          = "0.1.0"
-  s.summary          = "A short description of iOSBootstrap."
+  s.summary          = "utility, security, delegate wrapper, protobuf support, realm support."
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,6 +17,7 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!  
   s.description      = <<-DESC
+                        utility, security, delegate wrapper, protobuf support, realm support etc.
                        DESC
 
   s.homepage         = "https://github.com/yamingd/iOSBootstrap"
@@ -26,10 +27,12 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/yamingd/iOSBootstrap.git", :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/yamingd'
 
-  s.platform     = :ios, '7.0'
+  s.platform     = :ios, '8.0'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
+  s.exclude_files = 'Pod/Classes/**/*.proto', 'Pod/Classes/**/*.sh'
+  
   s.resource_bundles = {
     'iOSBootstrap' => ['Pod/Assets/*.png']
   }
@@ -44,11 +47,13 @@ Pod::Spec.new do |s|
   s.dependency 'TMCache'
   s.dependency 'UIColor+FlatColors'
   s.dependency 'Realm'
-  s.dependency 'GoogleProtobuf', '2.5.0'
+  s.dependency 'ProtocolBuffers', '~> 1.9'
   s.dependency 'ZipArchive'
   s.dependency 'CocoaAsyncSocket'
   s.dependency 'HTKDynamicResizingCell'
   s.dependency 'UIImage+ImageCompress'
   s.dependency 'ArrayUtils'
   s.dependency 'QBImagePickerController'
+  s.dependency 'NSDate+TimeAgo', '~> 1.0'
+
 end

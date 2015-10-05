@@ -82,8 +82,38 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-iOSBootstrap_Tests/AFNetworkActivityLogger.framework"
+  install_framework "Pods-iOSBootstrap_Tests/AFNetworking.framework"
+  install_framework "Pods-iOSBootstrap_Tests/ArrayUtils.framework"
+  install_framework "Pods-iOSBootstrap_Tests/CocoaAsyncSocket.framework"
+  install_framework "Pods-iOSBootstrap_Tests/HTKDynamicResizingCell.framework"
+  install_framework "Pods-iOSBootstrap_Tests/NSDate_TimeAgo.framework"
+  install_framework "Pods-iOSBootstrap_Tests/ProtocolBuffers.framework"
+  install_framework "Pods-iOSBootstrap_Tests/QBImagePickerController.framework"
+  install_framework "Pods-iOSBootstrap_Tests/Realm.framework"
+  install_framework "Pods-iOSBootstrap_Tests/SDWebImage.framework"
+  install_framework "Pods-iOSBootstrap_Tests/SSKeychain.framework"
+  install_framework "Pods-iOSBootstrap_Tests/TMCache.framework"
+  install_framework "Pods-iOSBootstrap_Tests/UIColor_FlatColors.framework"
+  install_framework "Pods-iOSBootstrap_Tests/UIImage_ImageCompress.framework"
+  install_framework "Pods-iOSBootstrap_Tests/ZipArchive.framework"
   install_framework "Pods-iOSBootstrap_Tests/iOSBootstrap.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-iOSBootstrap_Tests/AFNetworkActivityLogger.framework"
+  install_framework "Pods-iOSBootstrap_Tests/AFNetworking.framework"
+  install_framework "Pods-iOSBootstrap_Tests/ArrayUtils.framework"
+  install_framework "Pods-iOSBootstrap_Tests/CocoaAsyncSocket.framework"
+  install_framework "Pods-iOSBootstrap_Tests/HTKDynamicResizingCell.framework"
+  install_framework "Pods-iOSBootstrap_Tests/NSDate_TimeAgo.framework"
+  install_framework "Pods-iOSBootstrap_Tests/ProtocolBuffers.framework"
+  install_framework "Pods-iOSBootstrap_Tests/QBImagePickerController.framework"
+  install_framework "Pods-iOSBootstrap_Tests/Realm.framework"
+  install_framework "Pods-iOSBootstrap_Tests/SDWebImage.framework"
+  install_framework "Pods-iOSBootstrap_Tests/SSKeychain.framework"
+  install_framework "Pods-iOSBootstrap_Tests/TMCache.framework"
+  install_framework "Pods-iOSBootstrap_Tests/UIColor_FlatColors.framework"
+  install_framework "Pods-iOSBootstrap_Tests/UIImage_ImageCompress.framework"
+  install_framework "Pods-iOSBootstrap_Tests/ZipArchive.framework"
   install_framework "Pods-iOSBootstrap_Tests/iOSBootstrap.framework"
 fi

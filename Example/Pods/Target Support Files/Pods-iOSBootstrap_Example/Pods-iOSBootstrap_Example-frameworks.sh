@@ -82,8 +82,38 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-iOSBootstrap_Example/AFNetworkActivityLogger.framework"
+  install_framework "Pods-iOSBootstrap_Example/AFNetworking.framework"
+  install_framework "Pods-iOSBootstrap_Example/ArrayUtils.framework"
+  install_framework "Pods-iOSBootstrap_Example/CocoaAsyncSocket.framework"
+  install_framework "Pods-iOSBootstrap_Example/HTKDynamicResizingCell.framework"
+  install_framework "Pods-iOSBootstrap_Example/NSDate_TimeAgo.framework"
+  install_framework "Pods-iOSBootstrap_Example/ProtocolBuffers.framework"
+  install_framework "Pods-iOSBootstrap_Example/QBImagePickerController.framework"
+  install_framework "Pods-iOSBootstrap_Example/Realm.framework"
+  install_framework "Pods-iOSBootstrap_Example/SDWebImage.framework"
+  install_framework "Pods-iOSBootstrap_Example/SSKeychain.framework"
+  install_framework "Pods-iOSBootstrap_Example/TMCache.framework"
+  install_framework "Pods-iOSBootstrap_Example/UIColor_FlatColors.framework"
+  install_framework "Pods-iOSBootstrap_Example/UIImage_ImageCompress.framework"
+  install_framework "Pods-iOSBootstrap_Example/ZipArchive.framework"
   install_framework "Pods-iOSBootstrap_Example/iOSBootstrap.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-iOSBootstrap_Example/AFNetworkActivityLogger.framework"
+  install_framework "Pods-iOSBootstrap_Example/AFNetworking.framework"
+  install_framework "Pods-iOSBootstrap_Example/ArrayUtils.framework"
+  install_framework "Pods-iOSBootstrap_Example/CocoaAsyncSocket.framework"
+  install_framework "Pods-iOSBootstrap_Example/HTKDynamicResizingCell.framework"
+  install_framework "Pods-iOSBootstrap_Example/NSDate_TimeAgo.framework"
+  install_framework "Pods-iOSBootstrap_Example/ProtocolBuffers.framework"
+  install_framework "Pods-iOSBootstrap_Example/QBImagePickerController.framework"
+  install_framework "Pods-iOSBootstrap_Example/Realm.framework"
+  install_framework "Pods-iOSBootstrap_Example/SDWebImage.framework"
+  install_framework "Pods-iOSBootstrap_Example/SSKeychain.framework"
+  install_framework "Pods-iOSBootstrap_Example/TMCache.framework"
+  install_framework "Pods-iOSBootstrap_Example/UIColor_FlatColors.framework"
+  install_framework "Pods-iOSBootstrap_Example/UIImage_ImageCompress.framework"
+  install_framework "Pods-iOSBootstrap_Example/ZipArchive.framework"
   install_framework "Pods-iOSBootstrap_Example/iOSBootstrap.framework"
 fi
