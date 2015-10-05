@@ -10,11 +10,119 @@
 		0C4AB66D21CAE93BE9EB088CB04001C0 /* iOSBootstrap-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 701532EB6662AB58A3CD3E6DBD113E9B /* iOSBootstrap-dummy.m */; };
 		2AB1FB0EC0B2A12226C96FF93A1C2A4E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7F5726CBA3504BEE90BA299837D64A /* Foundation.framework */; };
 		3AC51A0C12F56AFD79207206B670F716 /* iOSBootstrap.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 702EF68A79CB5F06BC8A701B5E1CEF72 /* iOSBootstrap.bundle */; };
-		58B3F6033A39D6233B323B927D033E24 /* ReplaceMe.m in Sources */ = {isa = PBXBuildFile; fileRef = 998F6320F7F177717952EF4369516BDE /* ReplaceMe.m */; };
 		778802CBE11D1E5FF72CFB3C64CE7804 /* Pods-iOSBootstrap_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B1C2237DE7BCABFA550883758A9057 /* Pods-iOSBootstrap_Example-dummy.m */; };
 		9BE70A6EC7DC20E4611DDBD145C4B826 /* iOSBootstrap-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8ABD55A53E1EAECB027E03A2E83A715C /* iOSBootstrap-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A60C5B85FA710EC67EA68092878E80C7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7F5726CBA3504BEE90BA299837D64A /* Foundation.framework */; };
 		C146E362BC2BBE083408BD0524AAED8E /* Pods-iOSBootstrap_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E08A8911A79554D7B99AD316F90BD720 /* Pods-iOSBootstrap_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE73737B1BC2291400061000 /* App-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = CE7373001BC2291400061000 /* App-Prefix.pch */; settings = {ASSET_TAGS = (); }; };
+		CE73737C1BC2291400061000 /* AppBootstrap.h in Headers */ = {isa = PBXBuildFile; fileRef = CE7373011BC2291400061000 /* AppBootstrap.h */; settings = {ASSET_TAGS = (); }; };
+		CE73737D1BC2291400061000 /* AppBootstrap.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7373021BC2291400061000 /* AppBootstrap.m */; settings = {ASSET_TAGS = (); }; };
+		CE73737E1BC2291400061000 /* AppSecurity.h in Headers */ = {isa = PBXBuildFile; fileRef = CE7373031BC2291400061000 /* AppSecurity.h */; settings = {ASSET_TAGS = (); }; };
+		CE73737F1BC2291400061000 /* AppSecurity.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7373041BC2291400061000 /* AppSecurity.m */; settings = {ASSET_TAGS = (); }; };
+		CE7373801BC2291400061000 /* AppSession.h in Headers */ = {isa = PBXBuildFile; fileRef = CE7373051BC2291400061000 /* AppSession.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373811BC2291400061000 /* AppSession.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7373061BC2291400061000 /* AppSession.m */; settings = {ASSET_TAGS = (); }; };
+		CE7373821BC2291400061000 /* BetterNSLog.h in Headers */ = {isa = PBXBuildFile; fileRef = CE7373071BC2291400061000 /* BetterNSLog.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373831BC2291400061000 /* boost.h in Headers */ = {isa = PBXBuildFile; fileRef = CE7373081BC2291400061000 /* boost.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373841BC2291400061000 /* NSData+CommonCrypto.h in Headers */ = {isa = PBXBuildFile; fileRef = CE73730A1BC2291400061000 /* NSData+CommonCrypto.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373851BC2291400061000 /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = CE73730B1BC2291400061000 /* NSData+CommonCrypto.m */; settings = {ASSET_TAGS = (); }; };
+		CE7373861BC2291400061000 /* NSData+Ext.h in Headers */ = {isa = PBXBuildFile; fileRef = CE73730C1BC2291400061000 /* NSData+Ext.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373871BC2291400061000 /* NSData+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = CE73730D1BC2291400061000 /* NSData+Ext.m */; settings = {ASSET_TAGS = (); }; };
+		CE7373881BC2291400061000 /* NSMutableArray+Tool.h in Headers */ = {isa = PBXBuildFile; fileRef = CE73730E1BC2291400061000 /* NSMutableArray+Tool.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373891BC2291400061000 /* NSMutableArray+Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = CE73730F1BC2291400061000 /* NSMutableArray+Tool.m */; settings = {ASSET_TAGS = (); }; };
+		CE73738A1BC2291400061000 /* NSString+Ext.h in Headers */ = {isa = PBXBuildFile; fileRef = CE7373101BC2291400061000 /* NSString+Ext.h */; settings = {ASSET_TAGS = (); }; };
+		CE73738B1BC2291400061000 /* NSString+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7373111BC2291400061000 /* NSString+Ext.m */; settings = {ASSET_TAGS = (); }; };
+		CE73738C1BC2291400061000 /* UIImage+Tint.h in Headers */ = {isa = PBXBuildFile; fileRef = CE7373121BC2291400061000 /* UIImage+Tint.h */; settings = {ASSET_TAGS = (); }; };
+		CE73738D1BC2291400061000 /* UIImage+Tint.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7373131BC2291400061000 /* UIImage+Tint.m */; settings = {ASSET_TAGS = (); }; };
+		CE73738E1BC2291400061000 /* UIView+HUD.h in Headers */ = {isa = PBXBuildFile; fileRef = CE7373141BC2291400061000 /* UIView+HUD.h */; settings = {ASSET_TAGS = (); }; };
+		CE73738F1BC2291400061000 /* UIView+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7373151BC2291400061000 /* UIView+HUD.m */; settings = {ASSET_TAGS = (); }; };
+		CE7373901BC2291400061000 /* UIView+Layout.h in Headers */ = {isa = PBXBuildFile; fileRef = CE7373161BC2291400061000 /* UIView+Layout.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373911BC2291400061000 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7373171BC2291400061000 /* UIView+Layout.m */; settings = {ASSET_TAGS = (); }; };
+		CE7373921BC2291400061000 /* FHSegmentedViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = CE7373191BC2291400061000 /* FHSegmentedViewController.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373931BC2291400061000 /* FHSegmentedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE73731A1BC2291400061000 /* FHSegmentedViewController.m */; settings = {ASSET_TAGS = (); }; };
+		CE7373941BC2291400061000 /* HYCircleLoadingView.h in Headers */ = {isa = PBXBuildFile; fileRef = CE73731B1BC2291400061000 /* HYCircleLoadingView.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373951BC2291400061000 /* HYCircleLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE73731C1BC2291400061000 /* HYCircleLoadingView.m */; settings = {ASSET_TAGS = (); }; };
+		CE7373961BC2291400061000 /* LPlaceholderTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = CE73731D1BC2291400061000 /* LPlaceholderTextView.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373971BC2291400061000 /* LPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE73731E1BC2291400061000 /* LPlaceholderTextView.m */; settings = {ASSET_TAGS = (); }; };
+		CE7373981BC2291400061000 /* MBProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = CE73731F1BC2291400061000 /* MBProgressHUD.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373991BC2291400061000 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7373201BC2291400061000 /* MBProgressHUD.m */; settings = {ASSET_TAGS = (); }; };
+		CE73739A1BC2291400061000 /* UIImage+ImageEffects.h in Headers */ = {isa = PBXBuildFile; fileRef = CE7373211BC2291400061000 /* UIImage+ImageEffects.h */; settings = {ASSET_TAGS = (); }; };
+		CE73739B1BC2291400061000 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7373221BC2291400061000 /* UIImage+ImageEffects.m */; settings = {ASSET_TAGS = (); }; };
+		CE73739C1BC2291400061000 /* UIImageEdView.h in Headers */ = {isa = PBXBuildFile; fileRef = CE7373231BC2291400061000 /* UIImageEdView.h */; settings = {ASSET_TAGS = (); }; };
+		CE73739D1BC2291400061000 /* UIImageEdView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7373241BC2291400061000 /* UIImageEdView.m */; settings = {ASSET_TAGS = (); }; };
+		CE73739E1BC2291400061000 /* UIImageView+Ext.h in Headers */ = {isa = PBXBuildFile; fileRef = CE7373251BC2291400061000 /* UIImageView+Ext.h */; settings = {ASSET_TAGS = (); }; };
+		CE73739F1BC2291400061000 /* UIImageView+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7373261BC2291400061000 /* UIImageView+Ext.m */; settings = {ASSET_TAGS = (); }; };
+		CE7373A01BC2291400061000 /* UIImageView+LBBlurredImage.h in Headers */ = {isa = PBXBuildFile; fileRef = CE7373271BC2291400061000 /* UIImageView+LBBlurredImage.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373A11BC2291400061000 /* UIImageView+LBBlurredImage.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7373281BC2291400061000 /* UIImageView+LBBlurredImage.m */; settings = {ASSET_TAGS = (); }; };
+		CE7373A21BC2291400061000 /* UITabBarController+Ext.h in Headers */ = {isa = PBXBuildFile; fileRef = CE7373291BC2291400061000 /* UITabBarController+Ext.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373A31BC2291400061000 /* UITabBarController+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = CE73732A1BC2291400061000 /* UITabBarController+Ext.m */; settings = {ASSET_TAGS = (); }; };
+		CE7373A41BC2291400061000 /* UIViewController+Ext.h in Headers */ = {isa = PBXBuildFile; fileRef = CE73732B1BC2291400061000 /* UIViewController+Ext.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373A51BC2291400061000 /* UIViewController+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = CE73732C1BC2291400061000 /* UIViewController+Ext.m */; settings = {ASSET_TAGS = (); }; };
+		CE7373A61BC2291400061000 /* UIViewController+ImagePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = CE73732D1BC2291400061000 /* UIViewController+ImagePicker.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373A71BC2291400061000 /* UIViewController+ImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = CE73732E1BC2291400061000 /* UIViewController+ImagePicker.m */; settings = {ASSET_TAGS = (); }; };
+		CE7373A81BC2291400061000 /* UIViewController+SearchBar.h in Headers */ = {isa = PBXBuildFile; fileRef = CE73732F1BC2291400061000 /* UIViewController+SearchBar.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373A91BC2291400061000 /* UIViewController+SearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7373301BC2291400061000 /* UIViewController+SearchBar.m */; settings = {ASSET_TAGS = (); }; };
+		CE7373AA1BC2291400061000 /* DeviceHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = CE7373311BC2291400061000 /* DeviceHelper.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373AB1BC2291400061000 /* DeviceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7373321BC2291400061000 /* DeviceHelper.m */; settings = {ASSET_TAGS = (); }; };
+		CE7373AC1BC2291400061000 /* AFProtobufResponseSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = CE7373351BC2291400061000 /* AFProtobufResponseSerializer.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373AD1BC2291400061000 /* AFProtobufResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7373361BC2291400061000 /* AFProtobufResponseSerializer.m */; settings = {ASSET_TAGS = (); }; };
+		CE7373AE1BC2291400061000 /* APIClient.h in Headers */ = {isa = PBXBuildFile; fileRef = CE7373371BC2291400061000 /* APIClient.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373AF1BC2291400061000 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7373381BC2291400061000 /* APIClient.m */; settings = {ASSET_TAGS = (); }; };
+		CE7373B01BC2291400061000 /* TSAppResponse.hh in Headers */ = {isa = PBXBuildFile; fileRef = CE7373391BC2291400061000 /* TSAppResponse.hh */; settings = {ASSET_TAGS = (); }; };
+		CE7373B11BC2291400061000 /* TSAppResponse.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE73733A1BC2291400061000 /* TSAppResponse.mm */; settings = {ASSET_TAGS = (); }; };
+		CE7373B21BC2291400061000 /* NSDate+Helper.h in Headers */ = {isa = PBXBuildFile; fileRef = CE73733C1BC2291400061000 /* NSDate+Helper.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373B31BC2291400061000 /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = CE73733D1BC2291400061000 /* NSDate+Helper.m */; settings = {ASSET_TAGS = (); }; };
+		CE7373B41BC2291400061000 /* NSDate+TimeAgo.h in Headers */ = {isa = PBXBuildFile; fileRef = CE73733E1BC2291400061000 /* NSDate+TimeAgo.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373B51BC2291400061000 /* NSDate+TimeAgo.m in Sources */ = {isa = PBXBuildFile; fileRef = CE73733F1BC2291400061000 /* NSDate+TimeAgo.m */; settings = {ASSET_TAGS = (); }; };
+		CE7373B61BC2291400061000 /* NSDateTimeAgo.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CE7373401BC2291400061000 /* NSDateTimeAgo.bundle */; settings = {ASSET_TAGS = (); }; };
+		CE7373B71BC2291400061000 /* gen.sh in Resources */ = {isa = PBXBuildFile; fileRef = CE7373441BC2291400061000 /* gen.sh */; settings = {ASSET_TAGS = (); }; };
+		CE7373B81BC2291400061000 /* PAppResponse.pb.hh in Headers */ = {isa = PBXBuildFile; fileRef = CE7373451BC2291400061000 /* PAppResponse.pb.hh */; settings = {ASSET_TAGS = (); }; };
+		CE7373B91BC2291400061000 /* PAppResponse.pb.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE7373461BC2291400061000 /* PAppResponse.pb.mm */; settings = {ASSET_TAGS = (); }; };
+		CE7373BA1BC2291400061000 /* PAppResponse.proto in Resources */ = {isa = PBXBuildFile; fileRef = CE7373471BC2291400061000 /* PAppResponse.proto */; settings = {ASSET_TAGS = (); }; };
+		CE7373BB1BC2291400061000 /* PAppSession.pb.hh in Headers */ = {isa = PBXBuildFile; fileRef = CE7373481BC2291400061000 /* PAppSession.pb.hh */; settings = {ASSET_TAGS = (); }; };
+		CE7373BC1BC2291400061000 /* PAppSession.pb.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE7373491BC2291400061000 /* PAppSession.pb.mm */; settings = {ASSET_TAGS = (); }; };
+		CE7373BD1BC2291400061000 /* PAppSession.proto in Resources */ = {isa = PBXBuildFile; fileRef = CE73734A1BC2291400061000 /* PAppSession.proto */; settings = {ASSET_TAGS = (); }; };
+		CE7373BE1BC2291400061000 /* PBObjc.hh in Headers */ = {isa = PBXBuildFile; fileRef = CE73734B1BC2291400061000 /* PBObjc.hh */; settings = {ASSET_TAGS = (); }; };
+		CE7373BF1BC2291400061000 /* PBObjc.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE73734C1BC2291400061000 /* PBObjc.mm */; settings = {ASSET_TAGS = (); }; };
+		CE7373C01BC2291400061000 /* PBObjcWrapper.hh in Headers */ = {isa = PBXBuildFile; fileRef = CE73734D1BC2291400061000 /* PBObjcWrapper.hh */; settings = {ASSET_TAGS = (); }; };
+		CE7373C11BC2291400061000 /* RealmContext.h in Headers */ = {isa = PBXBuildFile; fileRef = CE73734E1BC2291400061000 /* RealmContext.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373C21BC2291400061000 /* RealmContext.m in Sources */ = {isa = PBXBuildFile; fileRef = CE73734F1BC2291400061000 /* RealmContext.m */; settings = {ASSET_TAGS = (); }; };
+		CE7373C31BC2291400061000 /* TSAppSession.hh in Headers */ = {isa = PBXBuildFile; fileRef = CE7373501BC2291400061000 /* TSAppSession.hh */; settings = {ASSET_TAGS = (); }; };
+		CE7373C41BC2291400061000 /* TSAppSession.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE7373511BC2291400061000 /* TSAppSession.mm */; settings = {ASSET_TAGS = (); }; };
+		CE7373C51BC2291400061000 /* Utility.h in Headers */ = {isa = PBXBuildFile; fileRef = CE7373531BC2291400061000 /* Utility.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373C61BC2291400061000 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7373541BC2291400061000 /* Utility.m */; settings = {ASSET_TAGS = (); }; };
+		CE7373C71BC2291400061000 /* GDIIndexBar.h in Headers */ = {isa = PBXBuildFile; fileRef = CE7373571BC2291400061000 /* GDIIndexBar.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373C81BC2291400061000 /* GDIIndexBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7373581BC2291400061000 /* GDIIndexBar.m */; settings = {ASSET_TAGS = (); }; };
+		CE7373C91BC2291400061000 /* bitstream.c in Sources */ = {isa = PBXBuildFile; fileRef = CE73735A1BC2291400061000 /* bitstream.c */; settings = {ASSET_TAGS = (); }; };
+		CE7373CA1BC2291400061000 /* bitstream.h in Headers */ = {isa = PBXBuildFile; fileRef = CE73735B1BC2291400061000 /* bitstream.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373CB1BC2291400061000 /* mask.c in Sources */ = {isa = PBXBuildFile; fileRef = CE73735C1BC2291400061000 /* mask.c */; settings = {ASSET_TAGS = (); }; };
+		CE7373CC1BC2291400061000 /* mask.h in Headers */ = {isa = PBXBuildFile; fileRef = CE73735D1BC2291400061000 /* mask.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373CD1BC2291400061000 /* QRCodeGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = CE73735E1BC2291400061000 /* QRCodeGenerator.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373CE1BC2291400061000 /* QRCodeGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = CE73735F1BC2291400061000 /* QRCodeGenerator.m */; settings = {ASSET_TAGS = (); }; };
+		CE7373CF1BC2291400061000 /* qrencode.c in Sources */ = {isa = PBXBuildFile; fileRef = CE7373601BC2291400061000 /* qrencode.c */; settings = {ASSET_TAGS = (); }; };
+		CE7373D01BC2291400061000 /* qrencode.h in Headers */ = {isa = PBXBuildFile; fileRef = CE7373611BC2291400061000 /* qrencode.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373D11BC2291400061000 /* qrinput.c in Sources */ = {isa = PBXBuildFile; fileRef = CE7373621BC2291400061000 /* qrinput.c */; settings = {ASSET_TAGS = (); }; };
+		CE7373D21BC2291400061000 /* qrinput.h in Headers */ = {isa = PBXBuildFile; fileRef = CE7373631BC2291400061000 /* qrinput.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373D31BC2291400061000 /* qrspec.c in Sources */ = {isa = PBXBuildFile; fileRef = CE7373641BC2291400061000 /* qrspec.c */; settings = {ASSET_TAGS = (); }; };
+		CE7373D41BC2291400061000 /* qrspec.h in Headers */ = {isa = PBXBuildFile; fileRef = CE7373651BC2291400061000 /* qrspec.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373D51BC2291400061000 /* rscode.c in Sources */ = {isa = PBXBuildFile; fileRef = CE7373661BC2291400061000 /* rscode.c */; settings = {ASSET_TAGS = (); }; };
+		CE7373D61BC2291400061000 /* rscode.h in Headers */ = {isa = PBXBuildFile; fileRef = CE7373671BC2291400061000 /* rscode.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373D71BC2291400061000 /* split.c in Sources */ = {isa = PBXBuildFile; fileRef = CE7373681BC2291400061000 /* split.c */; settings = {ASSET_TAGS = (); }; };
+		CE7373D81BC2291400061000 /* split.h in Headers */ = {isa = PBXBuildFile; fileRef = CE7373691BC2291400061000 /* split.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373D91BC2291400061000 /* MSCMoreOptionTableViewCell-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = CE73736B1BC2291400061000 /* MSCMoreOptionTableViewCell-Prefix.pch */; settings = {ASSET_TAGS = (); }; };
+		CE7373DA1BC2291400061000 /* MSCMoreOptionTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = CE73736C1BC2291400061000 /* MSCMoreOptionTableViewCell.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373DB1BC2291400061000 /* MSCMoreOptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE73736D1BC2291400061000 /* MSCMoreOptionTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		CE7373DC1BC2291400061000 /* MSCMoreOptionTableViewCellDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = CE73736E1BC2291400061000 /* MSCMoreOptionTableViewCellDelegate.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373DD1BC2291400061000 /* QRCameraSwitchButton.h in Headers */ = {isa = PBXBuildFile; fileRef = CE7373701BC2291400061000 /* QRCameraSwitchButton.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373DE1BC2291400061000 /* QRCameraSwitchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7373711BC2291400061000 /* QRCameraSwitchButton.m */; settings = {ASSET_TAGS = (); }; };
+		CE7373DF1BC2291400061000 /* QRCodeReader.h in Headers */ = {isa = PBXBuildFile; fileRef = CE7373721BC2291400061000 /* QRCodeReader.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373E01BC2291400061000 /* QRCodeReader.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7373731BC2291400061000 /* QRCodeReader.m */; settings = {ASSET_TAGS = (); }; };
+		CE7373E11BC2291400061000 /* QRCodeReaderDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = CE7373741BC2291400061000 /* QRCodeReaderDelegate.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373E21BC2291400061000 /* QRCodeReaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = CE7373751BC2291400061000 /* QRCodeReaderView.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373E31BC2291400061000 /* QRCodeReaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7373761BC2291400061000 /* QRCodeReaderView.m */; settings = {ASSET_TAGS = (); }; };
+		CE7373E41BC2291400061000 /* QRCodeReaderViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = CE7373771BC2291400061000 /* QRCodeReaderViewController.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373E51BC2291400061000 /* QRCodeReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7373781BC2291400061000 /* QRCodeReaderViewController.m */; settings = {ASSET_TAGS = (); }; };
+		CE7373E61BC2291400061000 /* XibFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = CE7373791BC2291400061000 /* XibFactory.h */; settings = {ASSET_TAGS = (); }; };
+		CE7373E71BC2291400061000 /* XibFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = CE73737A1BC2291400061000 /* XibFactory.m */; settings = {ASSET_TAGS = (); }; };
 		E17073A918D4A179E123B20BD1204404 /* Pods-iOSBootstrap_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7EACF1B4E649211F853F0A46072888 /* Pods-iOSBootstrap_Tests-dummy.m */; };
 		F946DC6290CE5D94C28A34F24C95AB47 /* Pods-iOSBootstrap_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E8BF410630AAF0EB3D8C0B7789EEE7B8 /* Pods-iOSBootstrap_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FF4AD6C3E6DFC5095C7F92F29ABD00EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7F5726CBA3504BEE90BA299837D64A /* Foundation.framework */; };
@@ -64,12 +172,120 @@
 		8A013F2A033C098DDCCB2602EA4F0508 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8ABD55A53E1EAECB027E03A2E83A715C /* iOSBootstrap-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iOSBootstrap-umbrella.h"; sourceTree = "<group>"; };
 		8F65EAD902DE2EFE140D4ADFE563EF99 /* Pods-iOSBootstrap_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iOSBootstrap_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		998F6320F7F177717952EF4369516BDE /* ReplaceMe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ReplaceMe.m; sourceTree = "<group>"; };
 		9B718A71D2798907525B400A0807E51A /* Pods-iOSBootstrap_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-iOSBootstrap_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		B1338813E239D0BD09EF38CCE21CF4EC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3B1C2237DE7BCABFA550883758A9057 /* Pods-iOSBootstrap_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-iOSBootstrap_Example-dummy.m"; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BFDA9152358672E3BD65AF161728B987 /* Pods-iOSBootstrap_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iOSBootstrap_Tests-resources.sh"; sourceTree = "<group>"; };
+		CE7373001BC2291400061000 /* App-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "App-Prefix.pch"; sourceTree = "<group>"; };
+		CE7373011BC2291400061000 /* AppBootstrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppBootstrap.h; sourceTree = "<group>"; };
+		CE7373021BC2291400061000 /* AppBootstrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppBootstrap.m; sourceTree = "<group>"; };
+		CE7373031BC2291400061000 /* AppSecurity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSecurity.h; sourceTree = "<group>"; };
+		CE7373041BC2291400061000 /* AppSecurity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppSecurity.m; sourceTree = "<group>"; };
+		CE7373051BC2291400061000 /* AppSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSession.h; sourceTree = "<group>"; };
+		CE7373061BC2291400061000 /* AppSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppSession.m; sourceTree = "<group>"; };
+		CE7373071BC2291400061000 /* BetterNSLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetterNSLog.h; sourceTree = "<group>"; };
+		CE7373081BC2291400061000 /* boost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = boost.h; sourceTree = "<group>"; };
+		CE73730A1BC2291400061000 /* NSData+CommonCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CommonCrypto.h"; sourceTree = "<group>"; };
+		CE73730B1BC2291400061000 /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CommonCrypto.m"; sourceTree = "<group>"; };
+		CE73730C1BC2291400061000 /* NSData+Ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Ext.h"; sourceTree = "<group>"; };
+		CE73730D1BC2291400061000 /* NSData+Ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Ext.m"; sourceTree = "<group>"; };
+		CE73730E1BC2291400061000 /* NSMutableArray+Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Tool.h"; sourceTree = "<group>"; };
+		CE73730F1BC2291400061000 /* NSMutableArray+Tool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Tool.m"; sourceTree = "<group>"; };
+		CE7373101BC2291400061000 /* NSString+Ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Ext.h"; sourceTree = "<group>"; };
+		CE7373111BC2291400061000 /* NSString+Ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Ext.m"; sourceTree = "<group>"; };
+		CE7373121BC2291400061000 /* UIImage+Tint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tint.h"; sourceTree = "<group>"; };
+		CE7373131BC2291400061000 /* UIImage+Tint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tint.m"; sourceTree = "<group>"; };
+		CE7373141BC2291400061000 /* UIView+HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HUD.h"; sourceTree = "<group>"; };
+		CE7373151BC2291400061000 /* UIView+HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HUD.m"; sourceTree = "<group>"; };
+		CE7373161BC2291400061000 /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
+		CE7373171BC2291400061000 /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
+		CE7373191BC2291400061000 /* FHSegmentedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FHSegmentedViewController.h; sourceTree = "<group>"; };
+		CE73731A1BC2291400061000 /* FHSegmentedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FHSegmentedViewController.m; sourceTree = "<group>"; };
+		CE73731B1BC2291400061000 /* HYCircleLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYCircleLoadingView.h; sourceTree = "<group>"; };
+		CE73731C1BC2291400061000 /* HYCircleLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYCircleLoadingView.m; sourceTree = "<group>"; };
+		CE73731D1BC2291400061000 /* LPlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPlaceholderTextView.h; sourceTree = "<group>"; };
+		CE73731E1BC2291400061000 /* LPlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPlaceholderTextView.m; sourceTree = "<group>"; };
+		CE73731F1BC2291400061000 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		CE7373201BC2291400061000 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		CE7373211BC2291400061000 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		CE7373221BC2291400061000 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		CE7373231BC2291400061000 /* UIImageEdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageEdView.h; sourceTree = "<group>"; };
+		CE7373241BC2291400061000 /* UIImageEdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageEdView.m; sourceTree = "<group>"; };
+		CE7373251BC2291400061000 /* UIImageView+Ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Ext.h"; sourceTree = "<group>"; };
+		CE7373261BC2291400061000 /* UIImageView+Ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Ext.m"; sourceTree = "<group>"; };
+		CE7373271BC2291400061000 /* UIImageView+LBBlurredImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+LBBlurredImage.h"; sourceTree = "<group>"; };
+		CE7373281BC2291400061000 /* UIImageView+LBBlurredImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+LBBlurredImage.m"; sourceTree = "<group>"; };
+		CE7373291BC2291400061000 /* UITabBarController+Ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+Ext.h"; sourceTree = "<group>"; };
+		CE73732A1BC2291400061000 /* UITabBarController+Ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+Ext.m"; sourceTree = "<group>"; };
+		CE73732B1BC2291400061000 /* UIViewController+Ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Ext.h"; sourceTree = "<group>"; };
+		CE73732C1BC2291400061000 /* UIViewController+Ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Ext.m"; sourceTree = "<group>"; };
+		CE73732D1BC2291400061000 /* UIViewController+ImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ImagePicker.h"; sourceTree = "<group>"; };
+		CE73732E1BC2291400061000 /* UIViewController+ImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ImagePicker.m"; sourceTree = "<group>"; };
+		CE73732F1BC2291400061000 /* UIViewController+SearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SearchBar.h"; sourceTree = "<group>"; };
+		CE7373301BC2291400061000 /* UIViewController+SearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SearchBar.m"; sourceTree = "<group>"; };
+		CE7373311BC2291400061000 /* DeviceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceHelper.h; sourceTree = "<group>"; };
+		CE7373321BC2291400061000 /* DeviceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceHelper.m; sourceTree = "<group>"; };
+		CE7373351BC2291400061000 /* AFProtobufResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFProtobufResponseSerializer.h; sourceTree = "<group>"; };
+		CE7373361BC2291400061000 /* AFProtobufResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFProtobufResponseSerializer.m; sourceTree = "<group>"; };
+		CE7373371BC2291400061000 /* APIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIClient.h; sourceTree = "<group>"; };
+		CE7373381BC2291400061000 /* APIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIClient.m; sourceTree = "<group>"; };
+		CE7373391BC2291400061000 /* TSAppResponse.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TSAppResponse.hh; sourceTree = "<group>"; };
+		CE73733A1BC2291400061000 /* TSAppResponse.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TSAppResponse.mm; sourceTree = "<group>"; };
+		CE73733C1BC2291400061000 /* NSDate+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helper.h"; sourceTree = "<group>"; };
+		CE73733D1BC2291400061000 /* NSDate+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Helper.m"; sourceTree = "<group>"; };
+		CE73733E1BC2291400061000 /* NSDate+TimeAgo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TimeAgo.h"; sourceTree = "<group>"; };
+		CE73733F1BC2291400061000 /* NSDate+TimeAgo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TimeAgo.m"; sourceTree = "<group>"; };
+		CE7373401BC2291400061000 /* NSDateTimeAgo.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NSDateTimeAgo.bundle; sourceTree = "<group>"; };
+		CE7373441BC2291400061000 /* gen.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = gen.sh; sourceTree = "<group>"; };
+		CE7373451BC2291400061000 /* PAppResponse.pb.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PAppResponse.pb.hh; sourceTree = "<group>"; };
+		CE7373461BC2291400061000 /* PAppResponse.pb.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PAppResponse.pb.mm; sourceTree = "<group>"; };
+		CE7373471BC2291400061000 /* PAppResponse.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PAppResponse.proto; sourceTree = "<group>"; };
+		CE7373481BC2291400061000 /* PAppSession.pb.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PAppSession.pb.hh; sourceTree = "<group>"; };
+		CE7373491BC2291400061000 /* PAppSession.pb.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PAppSession.pb.mm; sourceTree = "<group>"; };
+		CE73734A1BC2291400061000 /* PAppSession.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PAppSession.proto; sourceTree = "<group>"; };
+		CE73734B1BC2291400061000 /* PBObjc.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PBObjc.hh; sourceTree = "<group>"; };
+		CE73734C1BC2291400061000 /* PBObjc.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PBObjc.mm; sourceTree = "<group>"; };
+		CE73734D1BC2291400061000 /* PBObjcWrapper.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PBObjcWrapper.hh; sourceTree = "<group>"; };
+		CE73734E1BC2291400061000 /* RealmContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RealmContext.h; sourceTree = "<group>"; };
+		CE73734F1BC2291400061000 /* RealmContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RealmContext.m; sourceTree = "<group>"; };
+		CE7373501BC2291400061000 /* TSAppSession.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TSAppSession.hh; sourceTree = "<group>"; };
+		CE7373511BC2291400061000 /* TSAppSession.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TSAppSession.mm; sourceTree = "<group>"; };
+		CE7373531BC2291400061000 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		CE7373541BC2291400061000 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
+		CE7373571BC2291400061000 /* GDIIndexBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDIIndexBar.h; sourceTree = "<group>"; };
+		CE7373581BC2291400061000 /* GDIIndexBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDIIndexBar.m; sourceTree = "<group>"; };
+		CE73735A1BC2291400061000 /* bitstream.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bitstream.c; sourceTree = "<group>"; };
+		CE73735B1BC2291400061000 /* bitstream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bitstream.h; sourceTree = "<group>"; };
+		CE73735C1BC2291400061000 /* mask.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mask.c; sourceTree = "<group>"; };
+		CE73735D1BC2291400061000 /* mask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mask.h; sourceTree = "<group>"; };
+		CE73735E1BC2291400061000 /* QRCodeGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeGenerator.h; sourceTree = "<group>"; };
+		CE73735F1BC2291400061000 /* QRCodeGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeGenerator.m; sourceTree = "<group>"; };
+		CE7373601BC2291400061000 /* qrencode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = qrencode.c; sourceTree = "<group>"; };
+		CE7373611BC2291400061000 /* qrencode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrencode.h; sourceTree = "<group>"; };
+		CE7373621BC2291400061000 /* qrinput.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = qrinput.c; sourceTree = "<group>"; };
+		CE7373631BC2291400061000 /* qrinput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrinput.h; sourceTree = "<group>"; };
+		CE7373641BC2291400061000 /* qrspec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = qrspec.c; sourceTree = "<group>"; };
+		CE7373651BC2291400061000 /* qrspec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrspec.h; sourceTree = "<group>"; };
+		CE7373661BC2291400061000 /* rscode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rscode.c; sourceTree = "<group>"; };
+		CE7373671BC2291400061000 /* rscode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rscode.h; sourceTree = "<group>"; };
+		CE7373681BC2291400061000 /* split.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = split.c; sourceTree = "<group>"; };
+		CE7373691BC2291400061000 /* split.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = split.h; sourceTree = "<group>"; };
+		CE73736B1BC2291400061000 /* MSCMoreOptionTableViewCell-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MSCMoreOptionTableViewCell-Prefix.pch"; sourceTree = "<group>"; };
+		CE73736C1BC2291400061000 /* MSCMoreOptionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCMoreOptionTableViewCell.h; sourceTree = "<group>"; };
+		CE73736D1BC2291400061000 /* MSCMoreOptionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCMoreOptionTableViewCell.m; sourceTree = "<group>"; };
+		CE73736E1BC2291400061000 /* MSCMoreOptionTableViewCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCMoreOptionTableViewCellDelegate.h; sourceTree = "<group>"; };
+		CE7373701BC2291400061000 /* QRCameraSwitchButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCameraSwitchButton.h; sourceTree = "<group>"; };
+		CE7373711BC2291400061000 /* QRCameraSwitchButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCameraSwitchButton.m; sourceTree = "<group>"; };
+		CE7373721BC2291400061000 /* QRCodeReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeReader.h; sourceTree = "<group>"; };
+		CE7373731BC2291400061000 /* QRCodeReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeReader.m; sourceTree = "<group>"; };
+		CE7373741BC2291400061000 /* QRCodeReaderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeReaderDelegate.h; sourceTree = "<group>"; };
+		CE7373751BC2291400061000 /* QRCodeReaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeReaderView.h; sourceTree = "<group>"; };
+		CE7373761BC2291400061000 /* QRCodeReaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeReaderView.m; sourceTree = "<group>"; };
+		CE7373771BC2291400061000 /* QRCodeReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeReaderViewController.h; sourceTree = "<group>"; };
+		CE7373781BC2291400061000 /* QRCodeReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeReaderViewController.m; sourceTree = "<group>"; };
+		CE7373791BC2291400061000 /* XibFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XibFactory.h; sourceTree = "<group>"; };
+		CE73737A1BC2291400061000 /* XibFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XibFactory.m; sourceTree = "<group>"; };
 		D2F1356E7A54A4F06CEC04AA88BB5218 /* Pods-iOSBootstrap_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iOSBootstrap_Example-frameworks.sh"; sourceTree = "<group>"; };
 		D785414D963EF29F8956034E77FB7BAD /* Pods_iOSBootstrap_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSBootstrap_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBED899B6934B5968816F32E87BDF3F0 /* Pods-iOSBootstrap_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-iOSBootstrap_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -158,7 +374,7 @@
 		6B89B46AF49DD7E02957F57136F7B4D1 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				998F6320F7F177717952EF4369516BDE /* ReplaceMe.m */,
+				CE7372FE1BC2291400061000 /* AppBootstrap */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -246,6 +462,202 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CE7372FE1BC2291400061000 /* AppBootstrap */ = {
+			isa = PBXGroup;
+			children = (
+				CE7373001BC2291400061000 /* App-Prefix.pch */,
+				CE7373011BC2291400061000 /* AppBootstrap.h */,
+				CE7373021BC2291400061000 /* AppBootstrap.m */,
+				CE7373031BC2291400061000 /* AppSecurity.h */,
+				CE7373041BC2291400061000 /* AppSecurity.m */,
+				CE7373051BC2291400061000 /* AppSession.h */,
+				CE7373061BC2291400061000 /* AppSession.m */,
+				CE7373071BC2291400061000 /* BetterNSLog.h */,
+				CE7373081BC2291400061000 /* boost.h */,
+				CE7373091BC2291400061000 /* Category */,
+				CE7373181BC2291400061000 /* Controls */,
+				CE7373311BC2291400061000 /* DeviceHelper.h */,
+				CE7373321BC2291400061000 /* DeviceHelper.m */,
+				CE7373341BC2291400061000 /* HTTP */,
+				CE73733B1BC2291400061000 /* NSDate */,
+				CE7373431BC2291400061000 /* Protobuf */,
+				CE73734E1BC2291400061000 /* RealmContext.h */,
+				CE73734F1BC2291400061000 /* RealmContext.m */,
+				CE7373501BC2291400061000 /* TSAppSession.hh */,
+				CE7373511BC2291400061000 /* TSAppSession.mm */,
+				CE7373531BC2291400061000 /* Utility.h */,
+				CE7373541BC2291400061000 /* Utility.m */,
+				CE7373551BC2291400061000 /* Vendor */,
+				CE7373791BC2291400061000 /* XibFactory.h */,
+				CE73737A1BC2291400061000 /* XibFactory.m */,
+			);
+			path = AppBootstrap;
+			sourceTree = "<group>";
+		};
+		CE7373091BC2291400061000 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				CE73730A1BC2291400061000 /* NSData+CommonCrypto.h */,
+				CE73730B1BC2291400061000 /* NSData+CommonCrypto.m */,
+				CE73730C1BC2291400061000 /* NSData+Ext.h */,
+				CE73730D1BC2291400061000 /* NSData+Ext.m */,
+				CE73730E1BC2291400061000 /* NSMutableArray+Tool.h */,
+				CE73730F1BC2291400061000 /* NSMutableArray+Tool.m */,
+				CE7373101BC2291400061000 /* NSString+Ext.h */,
+				CE7373111BC2291400061000 /* NSString+Ext.m */,
+				CE7373121BC2291400061000 /* UIImage+Tint.h */,
+				CE7373131BC2291400061000 /* UIImage+Tint.m */,
+				CE7373141BC2291400061000 /* UIView+HUD.h */,
+				CE7373151BC2291400061000 /* UIView+HUD.m */,
+				CE7373161BC2291400061000 /* UIView+Layout.h */,
+				CE7373171BC2291400061000 /* UIView+Layout.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		CE7373181BC2291400061000 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				CE7373191BC2291400061000 /* FHSegmentedViewController.h */,
+				CE73731A1BC2291400061000 /* FHSegmentedViewController.m */,
+				CE73731B1BC2291400061000 /* HYCircleLoadingView.h */,
+				CE73731C1BC2291400061000 /* HYCircleLoadingView.m */,
+				CE73731D1BC2291400061000 /* LPlaceholderTextView.h */,
+				CE73731E1BC2291400061000 /* LPlaceholderTextView.m */,
+				CE73731F1BC2291400061000 /* MBProgressHUD.h */,
+				CE7373201BC2291400061000 /* MBProgressHUD.m */,
+				CE7373211BC2291400061000 /* UIImage+ImageEffects.h */,
+				CE7373221BC2291400061000 /* UIImage+ImageEffects.m */,
+				CE7373231BC2291400061000 /* UIImageEdView.h */,
+				CE7373241BC2291400061000 /* UIImageEdView.m */,
+				CE7373251BC2291400061000 /* UIImageView+Ext.h */,
+				CE7373261BC2291400061000 /* UIImageView+Ext.m */,
+				CE7373271BC2291400061000 /* UIImageView+LBBlurredImage.h */,
+				CE7373281BC2291400061000 /* UIImageView+LBBlurredImage.m */,
+				CE7373291BC2291400061000 /* UITabBarController+Ext.h */,
+				CE73732A1BC2291400061000 /* UITabBarController+Ext.m */,
+				CE73732B1BC2291400061000 /* UIViewController+Ext.h */,
+				CE73732C1BC2291400061000 /* UIViewController+Ext.m */,
+				CE73732D1BC2291400061000 /* UIViewController+ImagePicker.h */,
+				CE73732E1BC2291400061000 /* UIViewController+ImagePicker.m */,
+				CE73732F1BC2291400061000 /* UIViewController+SearchBar.h */,
+				CE7373301BC2291400061000 /* UIViewController+SearchBar.m */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		CE7373341BC2291400061000 /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				CE7373351BC2291400061000 /* AFProtobufResponseSerializer.h */,
+				CE7373361BC2291400061000 /* AFProtobufResponseSerializer.m */,
+				CE7373371BC2291400061000 /* APIClient.h */,
+				CE7373381BC2291400061000 /* APIClient.m */,
+				CE7373391BC2291400061000 /* TSAppResponse.hh */,
+				CE73733A1BC2291400061000 /* TSAppResponse.mm */,
+			);
+			path = HTTP;
+			sourceTree = "<group>";
+		};
+		CE73733B1BC2291400061000 /* NSDate */ = {
+			isa = PBXGroup;
+			children = (
+				CE73733C1BC2291400061000 /* NSDate+Helper.h */,
+				CE73733D1BC2291400061000 /* NSDate+Helper.m */,
+				CE73733E1BC2291400061000 /* NSDate+TimeAgo.h */,
+				CE73733F1BC2291400061000 /* NSDate+TimeAgo.m */,
+				CE7373401BC2291400061000 /* NSDateTimeAgo.bundle */,
+			);
+			path = NSDate;
+			sourceTree = "<group>";
+		};
+		CE7373431BC2291400061000 /* Protobuf */ = {
+			isa = PBXGroup;
+			children = (
+				CE7373441BC2291400061000 /* gen.sh */,
+				CE7373451BC2291400061000 /* PAppResponse.pb.hh */,
+				CE7373461BC2291400061000 /* PAppResponse.pb.mm */,
+				CE7373471BC2291400061000 /* PAppResponse.proto */,
+				CE7373481BC2291400061000 /* PAppSession.pb.hh */,
+				CE7373491BC2291400061000 /* PAppSession.pb.mm */,
+				CE73734A1BC2291400061000 /* PAppSession.proto */,
+				CE73734B1BC2291400061000 /* PBObjc.hh */,
+				CE73734C1BC2291400061000 /* PBObjc.mm */,
+				CE73734D1BC2291400061000 /* PBObjcWrapper.hh */,
+			);
+			path = Protobuf;
+			sourceTree = "<group>";
+		};
+		CE7373551BC2291400061000 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				CE7373561BC2291400061000 /* GDIndexBar */,
+				CE7373591BC2291400061000 /* libqrencode */,
+				CE73736A1BC2291400061000 /* MSCMoreOptionTableViewCell */,
+				CE73736F1BC2291400061000 /* QRCodeReaderViewController */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		CE7373561BC2291400061000 /* GDIndexBar */ = {
+			isa = PBXGroup;
+			children = (
+				CE7373571BC2291400061000 /* GDIIndexBar.h */,
+				CE7373581BC2291400061000 /* GDIIndexBar.m */,
+			);
+			path = GDIndexBar;
+			sourceTree = "<group>";
+		};
+		CE7373591BC2291400061000 /* libqrencode */ = {
+			isa = PBXGroup;
+			children = (
+				CE73735A1BC2291400061000 /* bitstream.c */,
+				CE73735B1BC2291400061000 /* bitstream.h */,
+				CE73735C1BC2291400061000 /* mask.c */,
+				CE73735D1BC2291400061000 /* mask.h */,
+				CE73735E1BC2291400061000 /* QRCodeGenerator.h */,
+				CE73735F1BC2291400061000 /* QRCodeGenerator.m */,
+				CE7373601BC2291400061000 /* qrencode.c */,
+				CE7373611BC2291400061000 /* qrencode.h */,
+				CE7373621BC2291400061000 /* qrinput.c */,
+				CE7373631BC2291400061000 /* qrinput.h */,
+				CE7373641BC2291400061000 /* qrspec.c */,
+				CE7373651BC2291400061000 /* qrspec.h */,
+				CE7373661BC2291400061000 /* rscode.c */,
+				CE7373671BC2291400061000 /* rscode.h */,
+				CE7373681BC2291400061000 /* split.c */,
+				CE7373691BC2291400061000 /* split.h */,
+			);
+			path = libqrencode;
+			sourceTree = "<group>";
+		};
+		CE73736A1BC2291400061000 /* MSCMoreOptionTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CE73736B1BC2291400061000 /* MSCMoreOptionTableViewCell-Prefix.pch */,
+				CE73736C1BC2291400061000 /* MSCMoreOptionTableViewCell.h */,
+				CE73736D1BC2291400061000 /* MSCMoreOptionTableViewCell.m */,
+				CE73736E1BC2291400061000 /* MSCMoreOptionTableViewCellDelegate.h */,
+			);
+			path = MSCMoreOptionTableViewCell;
+			sourceTree = "<group>";
+		};
+		CE73736F1BC2291400061000 /* QRCodeReaderViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CE7373701BC2291400061000 /* QRCameraSwitchButton.h */,
+				CE7373711BC2291400061000 /* QRCameraSwitchButton.m */,
+				CE7373721BC2291400061000 /* QRCodeReader.h */,
+				CE7373731BC2291400061000 /* QRCodeReader.m */,
+				CE7373741BC2291400061000 /* QRCodeReaderDelegate.h */,
+				CE7373751BC2291400061000 /* QRCodeReaderView.h */,
+				CE7373761BC2291400061000 /* QRCodeReaderView.m */,
+				CE7373771BC2291400061000 /* QRCodeReaderViewController.h */,
+				CE7373781BC2291400061000 /* QRCodeReaderViewController.m */,
+			);
+			path = QRCodeReaderViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -253,7 +665,63 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE7373DC1BC2291400061000 /* MSCMoreOptionTableViewCellDelegate.h in Headers */,
+				CE7373E61BC2291400061000 /* XibFactory.h in Headers */,
+				CE7373D41BC2291400061000 /* qrspec.h in Headers */,
+				CE7373881BC2291400061000 /* NSMutableArray+Tool.h in Headers */,
+				CE7373CD1BC2291400061000 /* QRCodeGenerator.h in Headers */,
+				CE7373CA1BC2291400061000 /* bitstream.h in Headers */,
+				CE7373AA1BC2291400061000 /* DeviceHelper.h in Headers */,
+				CE73739E1BC2291400061000 /* UIImageView+Ext.h in Headers */,
+				CE7373DF1BC2291400061000 /* QRCodeReader.h in Headers */,
+				CE7373901BC2291400061000 /* UIView+Layout.h in Headers */,
+				CE7373D61BC2291400061000 /* rscode.h in Headers */,
+				CE7373821BC2291400061000 /* BetterNSLog.h in Headers */,
+				CE7373D81BC2291400061000 /* split.h in Headers */,
+				CE7373801BC2291400061000 /* AppSession.h in Headers */,
+				CE7373981BC2291400061000 /* MBProgressHUD.h in Headers */,
+				CE73737E1BC2291400061000 /* AppSecurity.h in Headers */,
+				CE7373841BC2291400061000 /* NSData+CommonCrypto.h in Headers */,
+				CE7373B01BC2291400061000 /* TSAppResponse.hh in Headers */,
+				CE7373C11BC2291400061000 /* RealmContext.h in Headers */,
+				CE73738E1BC2291400061000 /* UIView+HUD.h in Headers */,
+				CE7373941BC2291400061000 /* HYCircleLoadingView.h in Headers */,
+				CE7373B81BC2291400061000 /* PAppResponse.pb.hh in Headers */,
+				CE7373861BC2291400061000 /* NSData+Ext.h in Headers */,
 				9BE70A6EC7DC20E4611DDBD145C4B826 /* iOSBootstrap-umbrella.h in Headers */,
+				CE7373AC1BC2291400061000 /* AFProtobufResponseSerializer.h in Headers */,
+				CE7373DA1BC2291400061000 /* MSCMoreOptionTableViewCell.h in Headers */,
+				CE7373C31BC2291400061000 /* TSAppSession.hh in Headers */,
+				CE7373D91BC2291400061000 /* MSCMoreOptionTableViewCell-Prefix.pch in Headers */,
+				CE7373E21BC2291400061000 /* QRCodeReaderView.h in Headers */,
+				CE73738A1BC2291400061000 /* NSString+Ext.h in Headers */,
+				CE7373A41BC2291400061000 /* UIViewController+Ext.h in Headers */,
+				CE7373B21BC2291400061000 /* NSDate+Helper.h in Headers */,
+				CE73739A1BC2291400061000 /* UIImage+ImageEffects.h in Headers */,
+				CE7373DD1BC2291400061000 /* QRCameraSwitchButton.h in Headers */,
+				CE7373A01BC2291400061000 /* UIImageView+LBBlurredImage.h in Headers */,
+				CE7373E41BC2291400061000 /* QRCodeReaderViewController.h in Headers */,
+				CE7373AE1BC2291400061000 /* APIClient.h in Headers */,
+				CE7373A61BC2291400061000 /* UIViewController+ImagePicker.h in Headers */,
+				CE7373B41BC2291400061000 /* NSDate+TimeAgo.h in Headers */,
+				CE7373E11BC2291400061000 /* QRCodeReaderDelegate.h in Headers */,
+				CE7373A21BC2291400061000 /* UITabBarController+Ext.h in Headers */,
+				CE7373CC1BC2291400061000 /* mask.h in Headers */,
+				CE7373961BC2291400061000 /* LPlaceholderTextView.h in Headers */,
+				CE73739C1BC2291400061000 /* UIImageEdView.h in Headers */,
+				CE7373D21BC2291400061000 /* qrinput.h in Headers */,
+				CE7373BE1BC2291400061000 /* PBObjc.hh in Headers */,
+				CE7373921BC2291400061000 /* FHSegmentedViewController.h in Headers */,
+				CE7373831BC2291400061000 /* boost.h in Headers */,
+				CE73737C1BC2291400061000 /* AppBootstrap.h in Headers */,
+				CE73737B1BC2291400061000 /* App-Prefix.pch in Headers */,
+				CE7373C51BC2291400061000 /* Utility.h in Headers */,
+				CE73738C1BC2291400061000 /* UIImage+Tint.h in Headers */,
+				CE7373C71BC2291400061000 /* GDIIndexBar.h in Headers */,
+				CE7373BB1BC2291400061000 /* PAppSession.pb.hh in Headers */,
+				CE7373D01BC2291400061000 /* qrencode.h in Headers */,
+				CE7373A81BC2291400061000 /* UIViewController+SearchBar.h in Headers */,
+				CE7373C01BC2291400061000 /* PBObjcWrapper.hh in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,7 +850,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE7373BA1BC2291400061000 /* PAppResponse.proto in Resources */,
 				3AC51A0C12F56AFD79207206B670F716 /* iOSBootstrap.bundle in Resources */,
+				CE7373B61BC2291400061000 /* NSDateTimeAgo.bundle in Resources */,
+				CE7373B71BC2291400061000 /* gen.sh in Resources */,
+				CE7373BD1BC2291400061000 /* PAppSession.proto in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,8 +880,56 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE7373E51BC2291400061000 /* QRCodeReaderViewController.m in Sources */,
+				CE7373B91BC2291400061000 /* PAppResponse.pb.mm in Sources */,
+				CE7373BF1BC2291400061000 /* PBObjc.mm in Sources */,
+				CE73739B1BC2291400061000 /* UIImage+ImageEffects.m in Sources */,
+				CE73738D1BC2291400061000 /* UIImage+Tint.m in Sources */,
+				CE7373811BC2291400061000 /* AppSession.m in Sources */,
+				CE7373971BC2291400061000 /* LPlaceholderTextView.m in Sources */,
+				CE73738F1BC2291400061000 /* UIView+HUD.m in Sources */,
+				CE73737D1BC2291400061000 /* AppBootstrap.m in Sources */,
+				CE7373D71BC2291400061000 /* split.c in Sources */,
+				CE7373E71BC2291400061000 /* XibFactory.m in Sources */,
+				CE7373E31BC2291400061000 /* QRCodeReaderView.m in Sources */,
+				CE7373E01BC2291400061000 /* QRCodeReader.m in Sources */,
+				CE7373B11BC2291400061000 /* TSAppResponse.mm in Sources */,
+				CE7373C21BC2291400061000 /* RealmContext.m in Sources */,
+				CE7373871BC2291400061000 /* NSData+Ext.m in Sources */,
+				CE7373C41BC2291400061000 /* TSAppSession.mm in Sources */,
+				CE7373CF1BC2291400061000 /* qrencode.c in Sources */,
+				CE7373851BC2291400061000 /* NSData+CommonCrypto.m in Sources */,
+				CE7373A71BC2291400061000 /* UIViewController+ImagePicker.m in Sources */,
+				CE7373991BC2291400061000 /* MBProgressHUD.m in Sources */,
+				CE7373AD1BC2291400061000 /* AFProtobufResponseSerializer.m in Sources */,
+				CE7373B31BC2291400061000 /* NSDate+Helper.m in Sources */,
+				CE7373C81BC2291400061000 /* GDIIndexBar.m in Sources */,
+				CE7373A31BC2291400061000 /* UITabBarController+Ext.m in Sources */,
+				CE7373D11BC2291400061000 /* qrinput.c in Sources */,
+				CE7373DB1BC2291400061000 /* MSCMoreOptionTableViewCell.m in Sources */,
+				CE7373DE1BC2291400061000 /* QRCameraSwitchButton.m in Sources */,
+				CE7373C91BC2291400061000 /* bitstream.c in Sources */,
+				CE7373D51BC2291400061000 /* rscode.c in Sources */,
+				CE7373BC1BC2291400061000 /* PAppSession.pb.mm in Sources */,
+				CE7373B51BC2291400061000 /* NSDate+TimeAgo.m in Sources */,
+				CE7373891BC2291400061000 /* NSMutableArray+Tool.m in Sources */,
+				CE7373D31BC2291400061000 /* qrspec.c in Sources */,
+				CE7373931BC2291400061000 /* FHSegmentedViewController.m in Sources */,
+				CE73739D1BC2291400061000 /* UIImageEdView.m in Sources */,
+				CE73738B1BC2291400061000 /* NSString+Ext.m in Sources */,
+				CE7373951BC2291400061000 /* HYCircleLoadingView.m in Sources */,
+				CE7373CB1BC2291400061000 /* mask.c in Sources */,
+				CE7373911BC2291400061000 /* UIView+Layout.m in Sources */,
+				CE7373AB1BC2291400061000 /* DeviceHelper.m in Sources */,
 				0C4AB66D21CAE93BE9EB088CB04001C0 /* iOSBootstrap-dummy.m in Sources */,
-				58B3F6033A39D6233B323B927D033E24 /* ReplaceMe.m in Sources */,
+				CE7373A51BC2291400061000 /* UIViewController+Ext.m in Sources */,
+				CE7373A11BC2291400061000 /* UIImageView+LBBlurredImage.m in Sources */,
+				CE7373A91BC2291400061000 /* UIViewController+SearchBar.m in Sources */,
+				CE7373AF1BC2291400061000 /* APIClient.m in Sources */,
+				CE7373C61BC2291400061000 /* Utility.m in Sources */,
+				CE73739F1BC2291400061000 /* UIImageView+Ext.m in Sources */,
+				CE73737F1BC2291400061000 /* AppSecurity.m in Sources */,
+				CE7373CE1BC2291400061000 /* QRCodeGenerator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
