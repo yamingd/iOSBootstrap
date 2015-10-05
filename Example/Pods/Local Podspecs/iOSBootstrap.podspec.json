@@ -1,0 +1,25 @@
+{
+  "name": "iOSBootstrap",
+  "version": "0.1.0",
+  "summary": "A short description of iOSBootstrap.",
+  "description": "",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/iOSBootstrap",
+  "license": "MIT",
+  "authors": {
+    "Yaming": "yamingd@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/iOSBootstrap.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes/**/*",
+  "resource_bundles": {
+    "iOSBootstrap": [
+      "Pod/Assets/*.png"
+    ]
+  }
+}

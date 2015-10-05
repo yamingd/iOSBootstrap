@@ -19,12 +19,12 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
                        DESC
 
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/iOSBootstrap"
+  s.homepage         = "https://github.com/yamingd/iOSBootstrap"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Yaming" => "yamingd@qq.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/iOSBootstrap.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => "https://github.com/yamingd/iOSBootstrap.git", :tag => s.version.to_s }
+  # s.social_media_url = 'https://twitter.com/yamingd'
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
@@ -36,5 +36,18 @@ Pod::Spec.new do |s|
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'AFNetworkActivityLogger', '~> 2.0'
+  s.dependency 'SDWebImage'
+  s.dependency 'SSKeychain'
+  s.dependency 'TMCache'
+  s.dependency 'UIColor+FlatColors'
+  s.dependency 'Realm'
+  s.dependency 'GoogleProtobuf', '2.5.0'
+  s.dependency 'ZipArchive'
+  s.dependency 'CocoaAsyncSocket'
+  s.dependency 'HTKDynamicResizingCell'
+  s.dependency 'UIImage+ImageCompress'
+  s.dependency 'ArrayUtils'
+  s.dependency 'QBImagePickerController'
 end
