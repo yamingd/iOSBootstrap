@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SqliteContext.h"
 
 @interface AppBootstrap : UIResponder <UIApplicationDelegate>
 
+@property (strong, nonatomic) SqliteContext* sqliteContext;
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) NSDictionary *launchOptions;
 @property (strong, nonatomic) NSDictionary *userNotification;

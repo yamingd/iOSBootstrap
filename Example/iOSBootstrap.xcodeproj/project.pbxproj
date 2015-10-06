@@ -22,6 +22,8 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		78B0954131AF629924D0F1EA /* Pods_iOSBootstrap_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F408CC2F1C300A3D25A2D98 /* Pods_iOSBootstrap_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		CE8AD2971BC3F32000A6392F /* PBPersonMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8AD2961BC3F32000A6392F /* PBPersonMapper.m */; settings = {ASSET_TAGS = (); }; };
+		CE8AD29A1BC3F5AF00A6392F /* PBPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8AD2991BC3F5AF00A6392F /* PBPerson.m */; settings = {ASSET_TAGS = (); }; };
 		D6A49FC23D79A52AF24CE193 /* Pods_iOSBootstrap_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFD87B9C2B39015EC5638746 /* Pods_iOSBootstrap_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -64,6 +66,10 @@
 		A92D9891276D1E8A68873D83 /* Pods-iOSBootstrap_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSBootstrap_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSBootstrap_Example/Pods-iOSBootstrap_Example.release.xcconfig"; sourceTree = "<group>"; };
 		BFD87B9C2B39015EC5638746 /* Pods_iOSBootstrap_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSBootstrap_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3992BED6050F8A405C2594B /* iOSBootstrap.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = iOSBootstrap.podspec; path = ../iOSBootstrap.podspec; sourceTree = "<group>"; };
+		CE8AD2951BC3F32000A6392F /* PBPersonMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPersonMapper.h; sourceTree = "<group>"; };
+		CE8AD2961BC3F32000A6392F /* PBPersonMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPersonMapper.m; sourceTree = "<group>"; };
+		CE8AD2981BC3F5AF00A6392F /* PBPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPerson.h; sourceTree = "<group>"; };
+		CE8AD2991BC3F5AF00A6392F /* PBPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPerson.m; sourceTree = "<group>"; };
 		E6D31F23426670A3ACD6DC13 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +113,8 @@
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
+				CE8AD2981BC3F5AF00A6392F /* PBPerson.h */,
+				CE8AD2991BC3F5AF00A6392F /* PBPerson.m */,
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example for iOSBootstrap */,
 				6003F5B5195388D20070C39A /* Tests */,
@@ -148,6 +156,8 @@
 				6003F5A6195388D20070C39A /* BootstrapViewController.m */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
+				CE8AD2951BC3F32000A6392F /* PBPersonMapper.h */,
+				CE8AD2961BC3F32000A6392F /* PBPersonMapper.m */,
 			);
 			name = "Example for iOSBootstrap";
 			path = iOSBootstrap;
@@ -391,7 +401,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* BootstrapAppDelegate.m in Sources */,
+				CE8AD2971BC3F32000A6392F /* PBPersonMapper.m in Sources */,
 				6003F5A7195388D20070C39A /* BootstrapViewController.m in Sources */,
+				CE8AD29A1BC3F5AF00A6392F /* PBPerson.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

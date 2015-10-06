@@ -1,6 +1,6 @@
 {
   "name": "iOSBootstrap",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "summary": "utility, security, delegate wrapper, protobuf support, realm support.",
   "description": "utility, security, delegate wrapper, protobuf support, realm support etc.",
   "homepage": "https://github.com/yamingd/iOSBootstrap",
@@ -10,10 +10,10 @@
   },
   "source": {
     "git": "https://github.com/yamingd/iOSBootstrap.git",
-    "tag": "0.1.0"
+    "tag": "1.0.0"
   },
   "platforms": {
-    "ios": "7.0"
+    "ios": "8.0"
   },
   "requires_arc": true,
   "source_files": "Pod/Classes/**/*",
@@ -72,6 +72,9 @@
     ],
     "NSDate+TimeAgo": [
       "~> 1.0"
+    ],
+    "FMDB/SQLCipher": [
+
     ]
   }
 }

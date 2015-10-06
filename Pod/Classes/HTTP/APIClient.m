@@ -62,7 +62,6 @@
     }else{
         [builder setMsg: error.localizedDescription];
     }
-    
     if (block) {
         block([builder build], error);
     }
@@ -73,7 +72,7 @@
     PAppResponse* resp = (PAppResponse*)data;
     if (resp.code > 200) {
         error = [NSError errorWithDomain:resp.msg code:resp.code userInfo:@{@"ex": resp.errors}];
-        block(resp, error);
+        block(nil, error);
         if (resp.code == 500) {
             [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationServerError object:nil userInfo:nil];
         }

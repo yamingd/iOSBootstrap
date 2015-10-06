@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "iOSBootstrap"
-  s.version          = "0.2.0"
+  s.version          = "1.0.0"
   s.summary          = "utility, security, delegate wrapper, protobuf support, realm support."
 
 # This description is used to generate tags and improve search results.
@@ -55,5 +55,6 @@ Pod::Spec.new do |s|
   s.dependency 'ArrayUtils'
   s.dependency 'QBImagePickerController'
   s.dependency 'NSDate+TimeAgo', '~> 1.0'
+  s.dependency 'FMDB/SQLCipher'
 
 end
