@@ -7,6 +7,7 @@
 //
 
 #import "BootstrapAppDelegate.h"
+#import "PBMapperInit.h"
 
 @implementation BootstrapAppDelegate
 
@@ -56,6 +57,9 @@
 }
 - (void)application:(UIApplication *)application prepareDatabase:(NSDictionary *)launchOptions{
     [super application:application prepareDatabase:launchOptions];
+    if ([AppSession current].isSignIn) {
+        [[PBMapperInit instance] start];
+    }
 }
 - (void)application:(UIApplication *)application prepareOpenControllers:(NSDictionary *)launchOptions{
     [super application:application prepareOpenControllers:launchOptions];
@@ -73,6 +77,15 @@
 
 -(void)onNetworkReconnect{
     
+}
+
+-(void)onAccountSignin:(NSNotification*)notification{
+    //NSDictionary *dictionary = [notification userInfo];
+    [[PBMapperInit instance] start];
+}
+
+-(void)onAccountSignout:(NSNotification*)notification{
+    //NSDictionary *dictionary = [notification userInfo];
 }
 
 @end

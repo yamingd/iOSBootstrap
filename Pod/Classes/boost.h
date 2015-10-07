@@ -13,6 +13,8 @@
 #define kRemoteNotificationAccepted @"RemoteNotificationAccepted"
 #define kNotificationNetworkError @"NotificationNetworkError"
 #define kNotificationServerError @"NotificationServerError"
+#define kNotificationAccountSignin @"NotificationAccountSignin"
+#define kNotificationAccountSignout @"NotificationAccountSignout"
 
 #define SHARED_INSTANCE_BLOCK(block) \
 static dispatch_once_t pred = 0; \
@@ -102,6 +104,7 @@ dispatch_async(dispatch_get_main_queue(), block);\
 
 #import "AppBootstrap.h"
 #import "AppSecurity.h"
+#import "AppSession.h"
 #import "SqliteContext.h"
 #import "SqliteMapper.h"
 #import "Utility.h"

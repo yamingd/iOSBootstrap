@@ -51,6 +51,9 @@
     // Set the app badge to 0 when launching
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onAccountSignin:) name:kNotificationAccountSignin object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onAccountSignout:) name:kNotificationAccountSignout object:nil];
+    
     self.launchOptions = launchOptions;
     LOG(@"didFinishLaunchingWithOptions BEGIN");
     if (launchOptions) {
@@ -264,6 +267,14 @@ static BOOL networNotReachableFlag = NO;
 
 -(void)onNetworkReconnect{
     
+}
+
+-(void)onAccountSignin:(NSNotification*)notification{
+    //NSDictionary *dictionary = [notification userInfo];
+}
+
+-(void)onAccountSignout:(NSNotification*)notification{
+    //NSDictionary *dictionary = [notification userInfo];
 }
 
 @end

@@ -35,4 +35,7 @@
 -(void)onNetworkLost;
 -(void)onNetworkReconnect;
 
+-(void)onAccountSignin:(NSNotification*)notes;
+-(void)onAccountSignout:(NSNotification*)notes;
+
 @end

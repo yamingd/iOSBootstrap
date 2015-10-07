@@ -99,16 +99,20 @@
 -(instancetype)init{
     self = [super init];
     if (self) {
+        [self prepareSql];
         [self prepare];
     }
     return self;
 }
 
--(void)prepare{
+-(void)prepareSql{
     [self buildCreateTableSql];
     [self buildSelectFields];
     [self buildSqlForGet];
     [self buildSqlForSave];
+}
+
+-(void)prepare{
     [self ensureContext];
     [_sqliteContext initTable:self];
     // 子类完成自定义的属性设置后，调用父类prepare
