@@ -73,6 +73,23 @@ blue:b/255.0 alpha:1.0]
 
 #define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 
+// 打印虚构函数
+#define PRINT_DEALLOC LOG(@"%@ dealloc ~", NSStringFromClass([self class]));
+
+#define dispatch_main_sync_safe(block)\
+if ([NSThread isMainThread]) {\
+block();\
+} else {\
+dispatch_sync(dispatch_get_main_queue(), block);\
+}
+
+#define dispatch_main_async_safe(block)\
+if ([NSThread isMainThread]) {\
+block();\
+} else {\
+dispatch_async(dispatch_get_main_queue(), block);\
+}
+
 #define kColor_tint     UIColorFromRGB(232, 70, 90)
 #define kColor_tint_h   UIColorFromRGB(175, 48, 66)
 #define kColor_tint_disable   UIColorFromRGB(242, 156, 159)
@@ -82,5 +99,15 @@ blue:b/255.0 alpha:1.0]
 #define kColor_lightGray     UIColorFromRGB(237, 237, 237)
 #define kColor_text    UIColorFromRGB(85, 85, 85)
 #define kColor_red    UIColorFromRGB(232, 64, 52)
+
+#import "AppBootstrap.h"
+#import "AppSecurity.h"
+#import "SqliteContext.h"
+#import "SqliteMapper.h"
+#import "Utility.h"
+#import "XibFactory.h"
+#import "APIClient.h"
+#import "UIView+Layout.h"
+#import "EventPoster.h"
 
 #endif

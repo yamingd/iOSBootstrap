@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TSAppSession.h"
-#import "AppSession.h"
+
+@class AppSession;
+@class PAppSession;
 
 @interface AppSecurity : NSObject
 
@@ -19,10 +20,12 @@
 + (NSString*)aes128Encrypt:(NSString*)text salt:(NSString*)salt iv:(NSString *)iv;
 + (NSString*)aes128Decrypt:(NSString*)text salt:(NSString*)salt iv:(NSString *)iv;
 
-@property(strong, nonatomic) NSString* cookieId;
-@property(strong, nonatomic) NSString* cookieSalt;
+@property(strong, nonatomic, readonly) NSString* cookieId;
+@property(strong, nonatomic, readonly) NSString* cookieSalt;
 
--(NSDictionary*)signSession:(TSAppSession*)session;
+-(void)config:(NSString*)cookieId salt:(NSString*)salt;
+
+-(NSDictionary*)signSession:(PAppSession*)session;
 
 -(NSString*)signRequest:(NSString*)url;
 

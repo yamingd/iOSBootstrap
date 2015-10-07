@@ -458,6 +458,8 @@
 		CE32681A78D94C15D256B579AC257576 /* object_store.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A82E50EC6A84F66FD67B6A09BA24583C /* object_store.hpp */; settings = {ATTRIBUTES = (Project, ); }; };
 		CE4D4C9D9F3F4DB6B35530CC009EFF99 /* TMMemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7040A79C24651EF8AD0397E7FA0957 /* TMMemoryCache.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		CE6FF39EE2F15521A55D928BA8FE1E55 /* AFNetworkActivityLogger-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4ED29E21C5CFFDF9F7863AF58BA9B406 /* AFNetworkActivityLogger-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE8AD29F1BC4AA6600A6392F /* EventPoster.h in Headers */ = {isa = PBXBuildFile; fileRef = CE8AD29D1BC4AA6600A6392F /* EventPoster.h */; settings = {ASSET_TAGS = (); }; };
+		CE8AD2A01BC4AA6600A6392F /* EventPoster.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8AD29E1BC4AA6600A6392F /* EventPoster.m */; settings = {ASSET_TAGS = (); }; };
 		CEE88A91779120087CB124EC654A05BC /* RLMListBase.mm in Sources */ = {isa = PBXBuildFile; fileRef = A04909475F04382B634CBE5CD6F7CA3C /* RLMListBase.mm */; settings = {COMPILER_FLAGS = "-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@\"0.95.3\"' -D__ASSERTMACROS__"; }; };
 		CF4595A1DB467A667B5F97D6CCD8063F /* SDWebImagePrefetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 507D53A649F51BE7030CF3392E94A150 /* SDWebImagePrefetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D089F3F8BE8DBDE093976DA5E35A47F7 /* RLMUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = 43D705B27B005CD6855D1E8355F52DFE /* RLMUtil.mm */; settings = {COMPILER_FLAGS = "-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@\"0.95.3\"' -D__ASSERTMACROS__"; }; };
@@ -1479,6 +1481,8 @@
 		CB141FF17BADFC845F0FD8D23F635616 /* NSString+Ext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSString+Ext.h"; sourceTree = "<group>"; };
 		CD23692AC1CA87E2F563F9E7DF260487 /* split.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = split.h; sourceTree = "<group>"; };
 		CD44DA9BCA9E32EAE8836F29C7BD5111 /* RLMObject.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMObject.mm; path = Realm/RLMObject.mm; sourceTree = "<group>"; };
+		CE8AD29D1BC4AA6600A6392F /* EventPoster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventPoster.h; sourceTree = "<group>"; };
+		CE8AD29E1BC4AA6600A6392F /* EventPoster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventPoster.m; sourceTree = "<group>"; };
 		CE913FA0DB197CEB3B84B5DD4FE009CE /* sqlite3.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
 		CEF7CA9613FFAFEEFDA6E8148E1D783E /* UIImageView+LBBlurredImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+LBBlurredImage.m"; sourceTree = "<group>"; };
 		CF38924F169D5DCBC76C5E18842E36AC /* Pods-iOSBootstrap_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOSBootstrap_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -2752,6 +2756,8 @@
 				D33FF42CDB985B36481532EC907B21A7 /* NSDate */,
 				1FA433E0DFC87B6B0E735BC916547846 /* Protobuf */,
 				1EFAD89287CEA96B93A742776C5CD0EB /* Vendor */,
+				CE8AD29D1BC4AA6600A6392F /* EventPoster.h */,
+				CE8AD29E1BC4AA6600A6392F /* EventPoster.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -3050,6 +3056,7 @@
 				B5936C5AB9EC891D20BB3B85558362A3 /* FHSegmentedViewController.h in Headers */,
 				E69F2DCB0CC72993F108D939854C9EE1 /* GDIIndexBar.h in Headers */,
 				D59DC0730291F3B876B7F6A2B172C7E4 /* HYCircleLoadingView.h in Headers */,
+				CE8AD29F1BC4AA6600A6392F /* EventPoster.h in Headers */,
 				B536A2B072409B7EFEF247BE1B003B43 /* iOSBootstrap-umbrella.h in Headers */,
 				80E3DFA44F3E758B377D0CD7D81131FF /* LPlaceholderTextView.h in Headers */,
 				E4A43FAEB19C48AD676B5850DC40B131 /* mask.h in Headers */,
@@ -4272,6 +4279,7 @@
 				E95B44228ED1662E7BD0D57BB966F56E /* HYCircleLoadingView.m in Sources */,
 				ABB76CD79BC00DF9CE39F832172D88DB /* iOSBootstrap-dummy.m in Sources */,
 				338781A50B2A8C9EB71C2835B092E695 /* LPlaceholderTextView.m in Sources */,
+				CE8AD2A01BC4AA6600A6392F /* EventPoster.m in Sources */,
 				3E5AE6C12445398E4566FFFC452B8A00 /* mask.c in Sources */,
 				915DB1DAA5113258AB00C705B30605CD /* MBProgressHUD.m in Sources */,
 				39CB813CAE475E26B363F5018C9D8210 /* MSCMoreOptionTableViewCell-Prefix.pch in Sources */,

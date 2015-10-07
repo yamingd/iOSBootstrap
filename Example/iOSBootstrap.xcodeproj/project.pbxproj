@@ -68,8 +68,9 @@
 		C3992BED6050F8A405C2594B /* iOSBootstrap.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = iOSBootstrap.podspec; path = ../iOSBootstrap.podspec; sourceTree = "<group>"; };
 		CE8AD2951BC3F32000A6392F /* PBPersonMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPersonMapper.h; sourceTree = "<group>"; };
 		CE8AD2961BC3F32000A6392F /* PBPersonMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPersonMapper.m; sourceTree = "<group>"; };
-		CE8AD2981BC3F5AF00A6392F /* PBPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPerson.h; sourceTree = "<group>"; };
-		CE8AD2991BC3F5AF00A6392F /* PBPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPerson.m; sourceTree = "<group>"; };
+		CE8AD2981BC3F5AF00A6392F /* PBPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBPerson.h; path = ../PBPerson.h; sourceTree = "<group>"; };
+		CE8AD2991BC3F5AF00A6392F /* PBPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBPerson.m; path = ../PBPerson.m; sourceTree = "<group>"; };
+		CE8AD29B1BC4962800A6392F /* AppConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConfig.h; sourceTree = "<group>"; };
 		E6D31F23426670A3ACD6DC13 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,8 +114,6 @@
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
-				CE8AD2981BC3F5AF00A6392F /* PBPerson.h */,
-				CE8AD2991BC3F5AF00A6392F /* PBPerson.m */,
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example for iOSBootstrap */,
 				6003F5B5195388D20070C39A /* Tests */,
@@ -149,6 +148,8 @@
 		6003F593195388D20070C39A /* Example for iOSBootstrap */ = {
 			isa = PBXGroup;
 			children = (
+				CE8AD2981BC3F5AF00A6392F /* PBPerson.h */,
+				CE8AD2991BC3F5AF00A6392F /* PBPerson.m */,
 				6003F59C195388D20070C39A /* BootstrapAppDelegate.h */,
 				6003F59D195388D20070C39A /* BootstrapAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -158,6 +159,7 @@
 				6003F594195388D20070C39A /* Supporting Files */,
 				CE8AD2951BC3F32000A6392F /* PBPersonMapper.h */,
 				CE8AD2961BC3F32000A6392F /* PBPersonMapper.m */,
+				CE8AD29B1BC4962800A6392F /* AppConfig.h */,
 			);
 			name = "Example for iOSBootstrap";
 			path = iOSBootstrap;

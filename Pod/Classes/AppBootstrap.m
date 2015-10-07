@@ -78,13 +78,16 @@
         }
     }
     
+    // Set the app badge to 0 when launching
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+    
     [self application:application prepareComponents:launchOptions];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
     if (self.userNotification) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:kRemoteNotificationReceived object:nil userInfo:self.userNotification];
+        [EventPoster send:kRemoteNotificationReceived userInfo:self.userNotification];
     }
     
     [self application:application prepareOpenControllers:launchOptions];
@@ -147,12 +150,9 @@
                                  stringByReplacingOccurrencesOfString: @">" withString: @""]
                                 stringByReplacingOccurrencesOfString: @" " withString: @""];
     
-    [AppSession current].session.deviceToken = deviceTokenStr;
-    [[AppSession current] remember];
-    NSMutableDictionary* userinfo = [[NSMutableDictionary alloc] init];
-    [userinfo setObject:deviceToken forKey:@"token"];
+    [[AppSession current] saveDeviceToken:deviceTokenStr];
     LOG(@"Device Token: %@", deviceTokenStr);
-    [[NSNotificationCenter defaultCenter] postNotificationName:kRemoteNotificationAccepted object:nil userInfo:userinfo];
+    [EventPoster send:kRemoteNotificationAccepted userInfo:nil];
 }
 
 -(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
@@ -160,7 +160,7 @@
 }
 
 -(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
-    [[NSNotificationCenter defaultCenter] postNotificationName:kRemoteNotificationReceived object:nil userInfo:userInfo];
+    [EventPoster send:kRemoteNotificationReceived userInfo:userInfo];
 }
 
 //QQ分享集成
@@ -250,7 +250,7 @@ static BOOL networNotReachableFlag = NO;
                 break;
         }
         
-        LOG(@"网络状态数字返回：%i", status)
+        LOG(@"网络状态数字返回：%li", (long)status)
         LOG(@"网络状态返回: %@", AFStringFromNetworkReachabilityStatus(status));
         
     }];

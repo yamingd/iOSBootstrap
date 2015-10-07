@@ -6,6 +6,8 @@
 //  Copyright © 2015 whosbean.com. All rights reserved.
 //
 
+#ifdef REALM_DB
+
 #import "TSAppSession.h"
 #import "PAppSession.pb.h"
 
@@ -150,3 +152,5 @@
 }
 
 @end
+
+#endif

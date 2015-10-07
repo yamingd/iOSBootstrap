@@ -43,8 +43,8 @@
     
     return self;
 }
--(instancetype)initWith:(NSString*)tag salt:(NSData*)salt{
-    return [self initWith:tag name:kSqliteTagDefault salt:salt];
+-(instancetype)initWith:(NSString*)name salt:(NSData*)salt{
+    return [self initWith:kSqliteTagDefault name:name salt:salt];
 }
 
 -(instancetype)setForUser:(long)userId{

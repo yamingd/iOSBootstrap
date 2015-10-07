@@ -8,6 +8,8 @@
 //  Copyright (c) 2014 whosbean.com. All rights reserved.
 //
 
+#ifdef REALM_DB
+
 #import "boost.h"
 #import "RealmContext.h"
 #import "AppSession.h"
@@ -104,3 +106,5 @@
 }
 
 @end
+
+#endif

@@ -7,6 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+
+#ifdef REALM_DB
+
 #import <Realm/Realm.h>
 
 @interface RealmContext : NSObject
@@ -27,3 +30,5 @@
 -(void)dealloc;
 
 @end
+
+#endif

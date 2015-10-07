@@ -8,8 +8,9 @@
 
 @import UIKit;
 
-@interface BootstrapAppDelegate : UIResponder <UIApplicationDelegate>
+#import "iOSBootstrap/AppBootstrap.h"
 
-@property (strong, nonatomic) UIWindow *window;
+@interface BootstrapAppDelegate : AppBootstrap
+
 
 @end

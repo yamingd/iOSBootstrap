@@ -6,6 +6,8 @@
 //  Copyright © 2015 whosbean.com. All rights reserved.
 //
 
+#ifdef REALM_DB
+
 #import <Foundation/Foundation.h>
 #import <Realm/Realm.h>
 
@@ -47,3 +49,4 @@
 
 @end
 
+#endif

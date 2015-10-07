@@ -6,14 +6,22 @@
 //  Copyright (c) 2014 whosbean. All rights reserved.
 //
 
+#import "boost.h"
 #import "AppSession.h"
-#import "RealmContext.h"
+#import "SqliteContext.h"
 #import "DeviceHelper.h"
 #import "AppSecurity.h"
 
+#define SESSION_UPDATE @"replace into app_session(key, data)values(?, ?)"
+#define SESSION_SELECT_ALL @"select key, data from app_session"
+#define SESSION_INSERT @"insert into app_session(key, data)values(?, ?)"
+#define SESSION_DB_INIT @"create table if not exists app_session(key text primary key, data blob) without ROWID"
+
 @interface AppSession ()
 
-@property(strong, nonatomic)RealmContext* sessionDb;
+@property(strong, nonatomic)SqliteContext* sessionDb;
+@property(strong, nonatomic)PAppSessionBuilder* sessionBuilder;
+@property BOOL hasRecord;
 
 @end
 
@@ -31,9 +39,19 @@
 - (instancetype)init{
     self = [super init];
     if (self) {
-        _sessionDb = [[RealmContext alloc] initWith:kRealmSession classes:@[TSAppSession.class] version:1];
+        _sessionDb = [[SqliteContext alloc] initWith:kDbSession name:kDbSession salt:nil];
+        [_sessionDb createTable:SESSION_DB_INIT];
     }
     return self;
+}
+
+- (void)dealloc{
+    
+    PRINT_DEALLOC
+    
+    if (_sessionDb) {
+        [_sessionDb close];
+    }
 }
 
 - (BOOL)isAnonymous{
@@ -73,50 +91,83 @@
     return [[AppSecurity instance] signSession:self.session];
 }
 
-- (void)remember{
+- (void)remember:(long)userId userName:(NSString*)userName realName:(NSString*)realName userKind:(int)userKind{
     //save session to local file
-    [_sessionDb update:^(RLMRealm *realm) {
-        [realm addOrUpdateObject:self.session];
-    }];}
+    _sessionBuilder.userId = userId;
+    _sessionBuilder.userName = userName;
+    _sessionBuilder.realName = realName;
+    _sessionBuilder.userKind = userKind;
+    _session = [_sessionBuilder build];
+    [self save];
+}
+
+- (void)saveDeviceToken:(NSString*)token{
+    _sessionBuilder.deviceToken = token;
+    if (!token) {
+        _sessionBuilder.deviceToken = @"NULL";
+    }
+    _session = [_sessionBuilder build];
+    [self save];
+}
 
 -(void)clear{
     
-    self.session.userId = 0;
-    self.session.userName = @"Guest";
-    self.session.realName = @"Guest";
-    
-    [self remember];
+    _sessionBuilder.userId = 0;
+    _sessionBuilder.userName = @"Guest";
+    _sessionBuilder.realName = @"Guest";
+    _session = [_sessionBuilder build];
+
+    [self save];
+}
+
+-(void)save{
+    __block NSData* data = [_session data];
+    if (_hasRecord) {
+        [_sessionDb update:@"updateSession" block:^(FMDatabase *db) {
+            [db executeUpdate:SESSION_UPDATE, @"session", data];
+        }];
+    }else{
+        [_sessionDb update:@"insertSession" block:^(FMDatabase *db) {
+            [db executeUpdate:SESSION_INSERT, @"session", data];
+        }];
+    }
 }
 
 - (void)load:(NSString*)appName{
     //load session from db file.
-    __block TSAppSession* ses = nil;
-    [_sessionDb query:^(RLMRealm *realm) {
-        ses = [TSAppSession objectInRealm:realm forPrimaryKey:@(1)];
+    _appName = appName;
+    _sessionBuilder = [PAppSession builder];
+    _hasRecord = NO;
+    
+    [_sessionDb query:@"SESSION_SELECT_ALL" block:^(FMDatabase *db) {
+        FMResultSet* rs = [db executeQuery:SESSION_SELECT_ALL];
+        while (rs.next) {
+            _hasRecord = YES;
+            NSData* data = [rs dataForColumnIndex:1];
+            [_sessionBuilder mergeFromData:data];
+            break;
+        }
     }];
     
-    if (!ses) {
-        ses = [TSAppSession newOne];
+    _sessionBuilder.osName = [DeviceHelper getOSName];
+    _sessionBuilder.osVersion = [DeviceHelper getOSVersion];
+    _sessionBuilder.deviceName = [DeviceHelper getDeviceName];
+    _sessionBuilder.deviceScreenSize = [DeviceHelper getScreenSize];
+    _sessionBuilder.packageName = [DeviceHelper getAppName];
+    _sessionBuilder.packageVersion = [DeviceHelper getAppVersion];
+    if (!_sessionBuilder.deviceToken) {
+        _sessionBuilder.deviceToken = @"NULL";
     }
-    
-    ses.osName = [DeviceHelper getOSName];
-    ses.osVersion = [DeviceHelper getOSVersion];
-    ses.deviceName = [DeviceHelper getDeviceName];
-    ses.deviceScreenSize = [DeviceHelper getScreenSize];
-    ses.packageName = [DeviceHelper getAppName];
-    ses.packageVersion = [DeviceHelper getAppVersion];
-    ses.deviceToken = @"NULL";
-    ses.deviceId = [DeviceHelper getDeviceUdid];
-    ses.appName = appName;
+    _sessionBuilder.deviceId = [DeviceHelper getDeviceUdid];
+    _sessionBuilder.appName = appName;
     
     NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
-    ses.localIdentifier = [[NSLocale currentLocale] objectForKey:NSLocaleLanguageCode];
-    self.userAgent = [NSString stringWithFormat:@"%@/%@ (%@; %@; %@)", appName, version, [[UIDevice currentDevice] model], [[UIDevice currentDevice] systemVersion], ses.localIdentifier];
+    _sessionBuilder.localeIdentifier = [[NSLocale currentLocale] objectForKey:NSLocaleLanguageCode];
+    _userAgent = [NSString stringWithFormat:@"%@/%@ (%@; %@; %@)", appName, version, [[UIDevice currentDevice] model], [[UIDevice currentDevice] systemVersion], _sessionBuilder.localeIdentifier];
     
-    [_sessionDb update:^(RLMRealm *realm) {
-        [realm addOrUpdateObject:ses];
-    }];
+    _session = [_sessionBuilder build];
     
-    self.session = ses;
+    [self save];
 }
+
 @end

@@ -7,17 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TSAppSession.h"
+#import "PAppSession.pb.h"
 
-#define kRealmSession @"session"
+#define kDbSession @"session"
 
 @interface AppSession : NSObject
 
 + (AppSession*)current;
 
-@property(strong, nonatomic) TSAppSession* session;
+@property(strong, nonatomic, readonly) NSString* appName;
+@property(strong, nonatomic, readonly) PAppSession* session;
 @property(strong, nonatomic) NSMutableDictionary *flash;
-@property(strong, nonatomic) NSString* userAgent;
+@property(strong, nonatomic, readonly) NSString* userAgent;
 
 - (instancetype)init;
 
@@ -32,7 +33,9 @@
 - (NSDictionary*) apidict;
 - (NSDictionary*) header;
 
-- (void)remember;
+- (void)remember:(long)userId userName:(NSString*)userName realName:(NSString*)realName userKind:(int)userKind;
+- (void)saveDeviceToken:(NSString*)token;
+
 - (void)clear;
 - (void)load:(NSString*)appName;
 

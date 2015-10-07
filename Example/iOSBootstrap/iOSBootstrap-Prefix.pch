@@ -13,4 +13,8 @@
 #ifdef __OBJC__
     @import UIKit;
     @import Foundation;
+
+#import "iOSBootstrap/boost.h"
+#import "AppConfig.h"
+
 #endif

@@ -22,7 +22,7 @@
 @property (strong, nonatomic, readonly)NSData* salt;
 
 -(instancetype)initWith:(NSString*)tag name:(NSString*)name salt:(NSData*)salt;
--(instancetype)initWith:(NSString*)tag salt:(NSData*)salt;
+-(instancetype)initWith:(NSString*)name salt:(NSData*)salt;
 
 -(instancetype)setForUser:(long)userId;
 

@@ -10,27 +10,10 @@
 
 @implementation BootstrapAppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    // Override point for customization after application launch.
-    return YES;
-}
-
-- (void)applicationWillResignActive:(UIApplication *)application
-{
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-}
-
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-}
-
-- (void)applicationWillEnterForeground:(UIApplication *)application
-{
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
@@ -41,6 +24,55 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)applicationWillEnterForeground:(UIApplication *)application
+{
+    // Set the app badge to 0 when coming to front
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+}
+
+-(NSString*)getAppNameString{
+    return kAppName;
+}
+
+-(BOOL)shouldEnableAPNS{
+    return kAppAPNSEnable;
+}
+
+#pragma mark - Application Prepare
+
+- (void)application:(UIApplication *)application prepareAppSession:(NSDictionary *)launchOptions{
+    [super application:application prepareAppSession:launchOptions];
+    [[AppSecurity instance] config:kAppCookieId salt:kAppCookieSalt];
+    [[APIClient shared] initWithApiBase:kAppAPIBaseUrl];
+}
+- (void)application:(UIApplication *)application prepareComponents:(NSDictionary *)launchOptions{
+    
+    // Set out NSURLCache settings
+    NSURLCache *URLCache = [[NSURLCache alloc] initWithMemoryCapacity:4 * 1024 * 1024 diskCapacity:20 * 1024 * 1024 diskPath:nil];
+    [NSURLCache setSharedURLCache:URLCache];
+    
+}
+- (void)application:(UIApplication *)application prepareDatabase:(NSDictionary *)launchOptions{
+    [super application:application prepareDatabase:launchOptions];
+}
+- (void)application:(UIApplication *)application prepareOpenControllers:(NSDictionary *)launchOptions{
+    [super application:application prepareOpenControllers:launchOptions];
+}
+- (void)application:(UIApplication *)application prepareRootController:(NSDictionary *)launchOptions{
+    UIViewController *rootVC = [XibFactory productWithStoryboardIdentifier:@"BootstrapViewController"];
+    [self.window setRootViewController:rootVC];
+}
+
+#pragma makr - Global Event
+
+-(void)onNetworkLost{
+    
+}
+
+-(void)onNetworkReconnect{
+    
 }
 
 @end

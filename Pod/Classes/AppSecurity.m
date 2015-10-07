@@ -12,6 +12,8 @@
 #import <CommonCrypto/CommonDigest.h>
 #import <CommonCrypto/CommonHMAC.h>
 #import "NSString+Ext.h"
+#import "PAppSession.pb.h"
+#import "AppSession.h"
 
 static NSString* digits = @"0123456789abcdef";
 static const char chars[] = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLOMNOPQRSTUVWXYZ";
@@ -27,14 +29,19 @@ static const char chars[] = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLOMN
     return _shared;
 }
 
--(NSDictionary*)signSession:(TSAppSession*)session{
+-(void)config:(NSString*)cookieId salt:(NSString*)salt{
+    _cookieId = cookieId;
+    _cookieSalt = salt;
+}
+
+-(NSDictionary*)signSession:(PAppSession*)session{
     
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
     [dict setValue:session.sessionId forKey:@"X-sessionid"];
     [dict setValue:session.appName forKey:@"X-app"];
     [dict setValue:session.deviceId forKey:@"X-cid"];
     [dict setValue:session.packageVersion forKey:@"X-ver"]; //客户端版本标示，用于跟踪使用情况
-    [dict setValue:session.localIdentifier forKeyPath:@"x-lang"];
+    [dict setValue:session.localeIdentifier forKeyPath:@"x-lang"];
     
     //cookie
     NSString* cookieSecret = [AppSecurity md5:self.cookieSalt encoding:NSUTF8StringEncoding];
@@ -104,7 +111,7 @@ static const char chars[] = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLOMN
     NSString* key = [AppSecurity randomCode];
     NSString* md5key = [AppSecurity md5:key encoding:NSASCIIStringEncoding];
     
-    NSString* data = [NSString stringWithFormat:@"%@|%d|%@|%@|%@", md5key, [AppSession current].session.userId, url, self.cookieSalt, self.cookieId];
+    NSString* data = [NSString stringWithFormat:@"%@|%lld|%@|%@|%@", md5key, [AppSession current].session.userId, url, self.cookieSalt, self.cookieId];
     
     //LOG(@"data: %@", data);
     
@@ -128,8 +135,8 @@ static const char chars[] = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLOMN
     NSData* data = [text dataUsingEncoding:NSUTF8StringEncoding];
     NSUInteger dataLength = [data length];
     
-    int diff = kCCKeySizeAES128 - (dataLength % kCCKeySizeAES128);
-    int newSize = dataLength;
+    long diff = kCCKeySizeAES128 - (dataLength % kCCKeySizeAES128);
+    long newSize = dataLength;
     
     if(diff > 0)
     {
