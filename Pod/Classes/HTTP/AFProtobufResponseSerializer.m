@@ -26,14 +26,25 @@
                            data:(NSData *)data
                           error:(NSError *__autoreleasing *)error
 {
-    [self validateResponse:(NSHTTPURLResponse *)response data:data error:error];
-    
+
     if (![self validateResponse:(NSHTTPURLResponse *)response data:data error:error]) {
         return nil;
     }
     
-    PAppResponse* resp = [PAppResponse parseFromData:data];
-    return resp;
+    NSHTTPURLResponse* rsp = (NSHTTPURLResponse*)response;
+    
+    id xtag = [rsp.allHeaderFields  objectForKey:@"X-tag"];
+    if (xtag != nil) {
+        NSNumber* count = (NSNumber*)xtag;
+        NSUInteger len = [data length];
+        char raw[len-count.intValue];
+        [data getBytes:raw range:NSMakeRange(count.intValue, len-count.intValue)];
+        PAppResponse* resp = [PAppResponse parseFromData:[NSData dataWithBytes:raw length:len-count.intValue]];
+        return resp;
+    }else{
+        PAppResponse* resp = [PAppResponse parseFromData:data];
+        return resp;
+    }
 }
 
 @end
