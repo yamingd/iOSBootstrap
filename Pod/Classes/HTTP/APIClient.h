@@ -11,9 +11,13 @@
 #import "PAppResponse.pb.h"
 #import "AFProtobufResponseSerializer.h"
 
+typedef void(^APIResponseBlock)(id response, NSError* error, BOOL local);
+
 @interface APIClient : AFHTTPSessionManager
 
 + (instancetype)shared;
+
++ (NSArray*)dataToClass:(NSArray*)data type:(Class)type;
 
 @property(strong, nonatomic)NSString* baseUrlString;
 
@@ -26,27 +30,27 @@
 
 -(void) getPath:(NSString *)urlString
                 params:(NSDictionary *)params
-            block:(void (^)(id response, NSError* error))block;
+            withCallback:(void (^)(id response, NSError* error))block;
 
 
 -(void) postPath:(NSString *)urlString
           params:(NSDictionary *)params
           formBody:(void (^)(id <AFMultipartFormData> formData))formBody
-           block:(void (^)(id response, NSError* error))block;
+           withCallback:(void (^)(id response, NSError* error))block;
 
 
 -(void) deletePath:(NSString *)urlString
            params:(NSDictionary *)params
-          block:(void (^)(id response, NSError* error))block;
+          withCallback:(void (^)(id response, NSError* error))block;
 
 
 -(void) putPath:(NSString *)urlString
            params:(NSDictionary *)params
-            block:(void (^)(id response, NSError* error))block;
+            withCallback:(void (^)(id response, NSError* error))block;
 
 -(void) patchPath:(NSString *)urlString
          params:(NSDictionary *)params
-          block:(void (^)(id response, NSError* error))block;
+          withCallback:(void (^)(id response, NSError* error))block;
 
 -(void)test;
 

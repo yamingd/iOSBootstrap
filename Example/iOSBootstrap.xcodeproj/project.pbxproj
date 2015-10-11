@@ -25,6 +25,7 @@
 		CE8AD2971BC3F32000A6392F /* PBPersonMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8AD2961BC3F32000A6392F /* PBPersonMapper.m */; settings = {ASSET_TAGS = (); }; };
 		CE8AD29A1BC3F5AF00A6392F /* PBPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8AD2991BC3F5AF00A6392F /* PBPerson.m */; settings = {ASSET_TAGS = (); }; };
 		CE8AD2A41BC4B54900A6392F /* PBMapperInit.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8AD2A31BC4B54900A6392F /* PBMapperInit.m */; settings = {ASSET_TAGS = (); }; };
+		CE8AD2A81BC4EE5C00A6392F /* PersonService.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8AD2A71BC4EE5C00A6392F /* PersonService.m */; settings = {ASSET_TAGS = (); }; };
 		D6A49FC23D79A52AF24CE193 /* Pods_iOSBootstrap_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFD87B9C2B39015EC5638746 /* Pods_iOSBootstrap_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,8 @@
 		CE8AD29B1BC4962800A6392F /* AppConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConfig.h; sourceTree = "<group>"; };
 		CE8AD2A21BC4B54900A6392F /* PBMapperInit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBMapperInit.h; path = Mapper/PBMapperInit.h; sourceTree = "<group>"; };
 		CE8AD2A31BC4B54900A6392F /* PBMapperInit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBMapperInit.m; path = Mapper/PBMapperInit.m; sourceTree = "<group>"; };
+		CE8AD2A61BC4EE5C00A6392F /* PersonService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonService.h; sourceTree = "<group>"; };
+		CE8AD2A71BC4EE5C00A6392F /* PersonService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonService.m; sourceTree = "<group>"; };
 		E6D31F23426670A3ACD6DC13 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -164,6 +167,8 @@
 				CE8AD2951BC3F32000A6392F /* PBPersonMapper.h */,
 				CE8AD2961BC3F32000A6392F /* PBPersonMapper.m */,
 				CE8AD29B1BC4962800A6392F /* AppConfig.h */,
+				CE8AD2A61BC4EE5C00A6392F /* PersonService.h */,
+				CE8AD2A71BC4EE5C00A6392F /* PersonService.m */,
 			);
 			name = "Example for iOSBootstrap";
 			path = iOSBootstrap;
@@ -417,6 +422,7 @@
 			files = (
 				6003F59E195388D20070C39A /* BootstrapAppDelegate.m in Sources */,
 				CE8AD2971BC3F32000A6392F /* PBPersonMapper.m in Sources */,
+				CE8AD2A81BC4EE5C00A6392F /* PersonService.m in Sources */,
 				CE8AD2A41BC4B54900A6392F /* PBMapperInit.m in Sources */,
 				6003F5A7195388D20070C39A /* BootstrapViewController.m in Sources */,
 				CE8AD29A1BC3F5AF00A6392F /* PBPerson.m in Sources */,

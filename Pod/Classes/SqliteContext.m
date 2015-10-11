@@ -126,10 +126,18 @@
 }
 
 -(NSSet*)tableColumns:(NSString*)name{
-    if (!_allTables) {
-        [self tables];
-    }
-    return [_allTables objectForKey:name];
+    [self ensureDbOpen];
+    NSMutableSet* set = [NSMutableSet set];
+    NSString* sql = [NSString stringWithFormat:@"PRAGMA table_info('%@')", name];
+    [_dbQueue inDatabase:^(FMDatabase *db) {
+        FMResultSet* rs = [db executeQuery:sql];
+        NSString* col;
+        while ([rs next]) {
+            col = [rs stringForColumnIndex:1];
+            [set addObject:col];
+        }
+    }];
+    return set;
 }
 
 -(void)clearTables{

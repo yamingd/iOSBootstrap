@@ -21,6 +21,15 @@
     return _sharedClient;
 }
 
++ (NSArray*)dataToClass:(NSArray *)data type:(Class)type{
+    NSMutableArray *dslist= [[NSMutableArray alloc] init];
+    for (NSData* item in data) {
+        id obj = [type parseFromData:item];
+        [dslist addObject:obj];
+    }
+    return dslist;
+}
+
 - (instancetype)initWithApiBase:(NSString*)url{
     self.baseUrlString = url;
     return [self initWithBaseURL:[NSURL URLWithString:url]];
@@ -52,8 +61,8 @@
     [self setHeaderValue:self.requestSerializer];
 }
 
--(void)parseError:(NSError *)error block:(void (^)(id response, NSError* error))block{
-    LOG(@"Error:%@", error);
+-(void)parseError:(NSString*)url error:(NSError *)error block:(void (^)(id response, NSError* error))block{
+    LOG(@"Error(%@):%@", url, error);
     PAppResponseBuilder *builder = [PAppResponse builder];
     [builder setCode:(int)error.code];
     if ([error code] == -1001 || [error code] == -1009) {
@@ -63,7 +72,7 @@
         [builder setMsg: error.localizedDescription];
     }
     if (block) {
-        block([builder build], error);
+        block(nil, error);
     }
 }
 
@@ -88,7 +97,7 @@
 
 -(void) getPath:(NSString *)urlString
        params:(NSDictionary *)params
-        block:(void (^)(id response, NSError* error))block{
+        withCallback:(void (^)(id response, NSError* error))block{
     
 #ifdef DEBUG
     LOG(@"query: %@", urlString);
@@ -99,8 +108,7 @@
     [self GET:urlString parameters:params success:^(NSURLSessionDataTask * __unused task, id data) {
         [self parseData:data block:block];
     } failure:^(NSURLSessionDataTask *__unused task, NSError *error) {
-        LOG(@"Error:%@", error);
-        [self parseError:error block:block];
+        [self parseError:urlString error:error block:block];
     }];
     
 }
@@ -108,7 +116,7 @@
 -(void) postPath:(NSString *)urlString
            params:(NSDictionary *)params
          formBody:(void (^)(id <AFMultipartFormData> formData))formBody
-            block:(void (^)(id response, NSError* error))block{
+            withCallback:(void (^)(id response, NSError* error))block{
 #ifdef DEBUG
     LOG(@"postPath: %@", urlString);
 #endif
@@ -118,8 +126,7 @@
         [self POST:urlString parameters:params constructingBodyWithBlock:formBody success:^(NSURLSessionDataTask *task, id data) {
             [self parseData:data block:block];
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
-            LOG(@"Error:%@", error);
-            [self parseError:error block:block];
+            [self parseError:urlString error:error block:block];
         }];
         
     } else{
@@ -127,8 +134,7 @@
         [self POST:urlString parameters:params success:^(NSURLSessionDataTask *task, id data) {
             [self parseData:data block:block];
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
-            LOG(@"Error:%@", error);
-            [self parseError:error block:block];
+            [self parseError:urlString error:error block:block];
         }];
         
     }
@@ -137,39 +143,36 @@
 
 -(void) deletePath:(NSString *)urlString
             params:(NSDictionary *)params
-             block:(void (^)(id response, NSError* error))block{
+             withCallback:(void (^)(id response, NSError* error))block{
     
     [self DELETE:urlString parameters:params success:^(NSURLSessionDataTask *task, id data) {
         [self parseData:data block:block];
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        LOG(@"Error:%@", error);
-        [self parseError:error block:block];
+        [self parseError:urlString error:error block:block];
     }];
     
 }
 
 -(void) putPath:(NSString *)urlString
          params:(NSDictionary *)params
-          block:(void (^)(id response, NSError* error))block{
+          withCallback:(void (^)(id response, NSError* error))block{
     
     [self PUT:urlString parameters:params success:^(NSURLSessionDataTask *task, id data) {
         [self parseData:data block:block];
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        LOG(@"Error:%@", error);
-        [self parseError:error block:block];
+        [self parseError:urlString error:error block:block];
     }];
     
 }
 
 -(void) patchPath:(NSString *)urlString
          params:(NSDictionary *)params
-          block:(void (^)(id response, NSError* error))block{
+          withCallback:(void (^)(id response, NSError* error))block{
     
     [self PATCH:urlString parameters:params success:^(NSURLSessionDataTask *task, id data) {
         [self parseData:data block:block];
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        LOG(@"Error:%@", error);
-        [self parseError:error block:block];
+        [self parseError:urlString error:error block:block];
     }];
     
 }
