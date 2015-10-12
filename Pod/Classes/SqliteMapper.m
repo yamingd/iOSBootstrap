@@ -11,12 +11,6 @@
 
 @interface SqliteMapper ()
 
-@property(nonatomic, strong)NSString* pkColumn;
-@property(nonatomic, strong)NSString* tableName;
-@property(nonatomic, strong)NSDictionary* tableColumns;
-@property(nonatomic, strong)NSArray* columns;
-@property(nonatomic, strong)SqliteContext* sqliteContext;
-
 @property(strong, nonatomic)NSString* selectFields;
 @property(strong, nonatomic)NSString* sqlForGet;
 @property(strong, nonatomic)NSString* sqlForSave;
@@ -128,6 +122,39 @@
 -(void)ensureContext{
     NSException *e = [NSException exceptionWithName:@"NotImplement" reason:@"NotImplement" userInfo:nil];
     @throw e;
+}
+
+#pragma mark - Set
+
+-(void)setTableName:(NSString *)tableName{
+    if (_tableName) {
+        return;
+    }
+    _tableName = tableName;
+}
+-(void)setTableColumns:(NSDictionary *)tableColumns{
+    if (_tableColumns) {
+        return;
+    }
+    _tableColumns = tableColumns;
+}
+-(void)setSqliteContext:(SqliteContext *)sqliteContext{
+    if (_sqliteContext) {
+        return;
+    }
+    _sqliteContext = sqliteContext;
+}
+-(void)setPkColumn:(NSString *)pkColumn{
+    if (_pkColumn) {
+        return;
+    }
+    _pkColumn = pkColumn;
+}
+-(void)setColumns:(NSArray *)columns{
+    if (_columns) {
+        return;
+    }
+    _columns = columns;
 }
 
 #pragma mark - ResultSet

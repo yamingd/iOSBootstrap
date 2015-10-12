@@ -47,6 +47,13 @@
 -(void)ensureContext;
 -(NSString*)filterNull:(NSString*)val;
 
+#pragma mark - Set
+-(void)setTableName:(NSString *)tableName;
+-(void)setTableColumns:(NSDictionary *)tableColumns;
+-(void)setSqliteContext:(SqliteContext *)sqliteContext;
+-(void)setPkColumn:(NSString *)pkColumn;
+-(void)setColumns:(NSArray *)columns;
+
 #pragma mark - Get
 -(id)get:(id)pkValue withRef:(BOOL)ref;
 -(NSArray*)gets:(NSString*)tag withArray:(NSArray*)pkValues withRef:(BOOL)ref;
