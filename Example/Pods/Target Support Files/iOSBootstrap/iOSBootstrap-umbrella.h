@@ -25,6 +25,7 @@
 #import "UIViewController+ImagePicker.h"
 #import "UIViewController+SearchBar.h"
 #import "DeviceHelper.h"
+#import "EventPoster.h"
 #import "AFProtobufResponseSerializer.h"
 #import "APIClient.h"
 #import "NSDate+Helper.h"

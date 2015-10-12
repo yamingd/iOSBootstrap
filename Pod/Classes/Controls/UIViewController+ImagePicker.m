@@ -71,7 +71,7 @@
     UIImage *selectedImage = [info objectForKey:UIImagePickerControllerEditedImage];
 //    NSData* imgData = UIImageJPEGRepresentation(selectedImage, 1.0);
     NSData* imgData = [self compressImage:selectedImage compressRatio:.7 maxCompressRatio:.5];
-    NSString* iconName = [NSString stringWithFormat:@"%ld.jpeg", [NSDate date].timeIntervalSince1970];
+    NSString* iconName = [NSString stringWithFormat:@"%f.jpeg", [NSDate date].timeIntervalSince1970];
     
     if ([self respondsToSelector:@selector(imagePickerDidSelecteImages:)]) {
         [self performSelector:@selector(imagePickerDidSelecteImages:) withObject:@[imgData, iconName]];

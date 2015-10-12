@@ -69,7 +69,7 @@
 			text = @"Yesterday";
 			break;
 		default:
-			text = [NSString stringWithFormat:@"%d days ago", daysAgo];
+			text = [NSString stringWithFormat:@"%ld days ago", daysAgo];
 	}
 	return text;
 }

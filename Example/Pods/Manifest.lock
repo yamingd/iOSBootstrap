@@ -25,34 +25,30 @@ PODS:
     - AFNetworking/NSURLSession
   - ArrayUtils (1.3)
   - CocoaAsyncSocket (7.4.2)
+  - DateTools (1.7.0)
   - FMDB/common (2.5)
   - FMDB/SQLCipher (2.5):
     - FMDB/common
     - SQLCipher
   - HTKDynamicResizingCell (0.0.2)
-  - iOSBootstrap (1.0.0):
+  - iOSBootstrap (1.3.0):
     - AFNetworkActivityLogger (~> 2.0)
     - AFNetworking (~> 2.3)
     - ArrayUtils
     - CocoaAsyncSocket
+    - DateTools (~> 1.7)
     - FMDB/SQLCipher
     - HTKDynamicResizingCell
-    - NSDate+TimeAgo (~> 1.0)
     - ProtocolBuffers (~> 1.9)
     - QBImagePickerController
-    - Realm
     - SDWebImage
     - SSKeychain
     - TMCache
     - UIColor+FlatColors
     - UIImage+ImageCompress
     - ZipArchive
-  - NSDate+TimeAgo (1.0.3)
   - ProtocolBuffers (1.9.9)
   - QBImagePickerController (3.2.0)
-  - Realm (0.95.3):
-    - Realm/Headers (= 0.95.3)
-  - Realm/Headers (0.95.3)
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
@@ -79,13 +75,12 @@ SPEC CHECKSUMS:
   AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
   ArrayUtils: 1444c5aab693bf1c8bde31145e10fc7c5cf930bf
   CocoaAsyncSocket: f5783bdedd232d91b89769bc4b5a1580aed518ad
+  DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
   FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
   HTKDynamicResizingCell: 9358514816f0737a8d20329617ee126a1498357c
-  iOSBootstrap: fb52f411ba83b7b05a621585eb54ce50be343560
-  NSDate+TimeAgo: 416f55d2696d3744c313091c5a9280d47f8238fe
+  iOSBootstrap: eba3fa3fd7c6ab342c141eadaf1576dae07030b5
   ProtocolBuffers: 18c1d7d0c651d3c878e6fcc8ab8ab1c679b457b1
   QBImagePickerController: 75b3857b1307a3c01ce486559bc294f802ddec6c
-  Realm: 55885fa05865344994ad8b56da96669ffa39fbf1
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   SQLCipher: c44fcca49c31483c2489cfb79aa7a69407f3794a
   SSKeychain: 3f42991739c6c60a9cf1bbd4dff6c0d3694bcf3d
@@ -94,4 +89,4 @@ SPEC CHECKSUMS:
   UIImage+ImageCompress: 6b38489f38075d569d9f25d72af7ecf5c84c1057
   ZipArchive: e25a4373192673e3229ac8d6e9f64a3e5713c966
 
-COCOAPODS: 0.39.0.beta.4
+COCOAPODS: 0.39.0

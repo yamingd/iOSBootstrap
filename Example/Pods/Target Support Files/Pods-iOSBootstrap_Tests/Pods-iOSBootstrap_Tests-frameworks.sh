@@ -42,14 +42,16 @@ install_framework()
   # Resign the code if required by the build settings to avoid unstable apps
   code_sign_if_enabled "${destination}/$(basename "$1")"
 
-  # Embed linked Swift runtime libraries
-  local swift_runtime_libs
-  swift_runtime_libs=$(xcrun otool -LX "$binary" | grep --color=never @rpath/libswift | sed -E s/@rpath\\/\(.+dylib\).*/\\1/g | uniq -u  && exit ${PIPESTATUS[0]})
-  for lib in $swift_runtime_libs; do
-    echo "rsync -auv \"${SWIFT_STDLIB_PATH}/${lib}\" \"${destination}\""
-    rsync -auv "${SWIFT_STDLIB_PATH}/${lib}" "${destination}"
-    code_sign_if_enabled "${destination}/${lib}"
-  done
+  # Embed linked Swift runtime libraries. No longer necessary as of Xcode 7.
+  if [ "${XCODE_VERSION_MAJOR}" -lt 7 ]; then
+    local swift_runtime_libs
+    swift_runtime_libs=$(xcrun otool -LX "$binary" | grep --color=never @rpath/libswift | sed -E s/@rpath\\/\(.+dylib\).*/\\1/g | uniq -u  && exit ${PIPESTATUS[0]})
+    for lib in $swift_runtime_libs; do
+      echo "rsync -auv \"${SWIFT_STDLIB_PATH}/${lib}\" \"${destination}\""
+      rsync -auv "${SWIFT_STDLIB_PATH}/${lib}" "${destination}"
+      code_sign_if_enabled "${destination}/${lib}"
+    done
+  fi
 }
 
 # Signs a framework with the provided identity
@@ -86,12 +88,11 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-iOSBootstrap_Tests/AFNetworking.framework"
   install_framework "Pods-iOSBootstrap_Tests/ArrayUtils.framework"
   install_framework "Pods-iOSBootstrap_Tests/CocoaAsyncSocket.framework"
+  install_framework "Pods-iOSBootstrap_Tests/DateTools.framework"
   install_framework "Pods-iOSBootstrap_Tests/FMDB.framework"
   install_framework "Pods-iOSBootstrap_Tests/HTKDynamicResizingCell.framework"
-  install_framework "Pods-iOSBootstrap_Tests/NSDate_TimeAgo.framework"
   install_framework "Pods-iOSBootstrap_Tests/ProtocolBuffers.framework"
   install_framework "Pods-iOSBootstrap_Tests/QBImagePickerController.framework"
-  install_framework "Pods-iOSBootstrap_Tests/Realm.framework"
   install_framework "Pods-iOSBootstrap_Tests/SDWebImage.framework"
   install_framework "Pods-iOSBootstrap_Tests/SQLCipher.framework"
   install_framework "Pods-iOSBootstrap_Tests/SSKeychain.framework"
@@ -106,12 +107,11 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-iOSBootstrap_Tests/AFNetworking.framework"
   install_framework "Pods-iOSBootstrap_Tests/ArrayUtils.framework"
   install_framework "Pods-iOSBootstrap_Tests/CocoaAsyncSocket.framework"
+  install_framework "Pods-iOSBootstrap_Tests/DateTools.framework"
   install_framework "Pods-iOSBootstrap_Tests/FMDB.framework"
   install_framework "Pods-iOSBootstrap_Tests/HTKDynamicResizingCell.framework"
-  install_framework "Pods-iOSBootstrap_Tests/NSDate_TimeAgo.framework"
   install_framework "Pods-iOSBootstrap_Tests/ProtocolBuffers.framework"
   install_framework "Pods-iOSBootstrap_Tests/QBImagePickerController.framework"
-  install_framework "Pods-iOSBootstrap_Tests/Realm.framework"
   install_framework "Pods-iOSBootstrap_Tests/SDWebImage.framework"
   install_framework "Pods-iOSBootstrap_Tests/SQLCipher.framework"
   install_framework "Pods-iOSBootstrap_Tests/SSKeychain.framework"

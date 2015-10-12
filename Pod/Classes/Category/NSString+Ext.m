@@ -11,7 +11,6 @@
 #import "NSString+Ext.h"
 #import "NSData+Ext.h"
 #import "NSDate+Helper.h"
-#import "NSDate+TimeAgo.h"
 
 @implementation NSString (Helper)
 
@@ -84,11 +83,6 @@ static char base64EncodingTable[64] = {
     return result;
 }
 
-- (NSString *)dateTimeAgo{
-    NSDate* date = [NSDate dateFromString:self];
-    return [date dateTimeAgo];
-}
-
 -(NSString *)unescapeUnicode {
     NSString *input = self;
     int x = 0;
@@ -145,7 +139,7 @@ static char base64EncodingTable[64] = {
     // Create byte array of unsigned chars
     unsigned char md5Buffer[CC_MD5_DIGEST_LENGTH];
     // Create 16 bytes MD5 hash value, store in buffer
-    CC_MD5(ptr, strlen(ptr), md5Buffer);
+    CC_MD5(ptr, (int)strlen(ptr), md5Buffer);
     // Convert unsigned char buffer to NSString of hex values
     NSMutableString *output = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
     for(int i = 0; i < CC_MD5_DIGEST_LENGTH; i++)

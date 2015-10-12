@@ -20,13 +20,13 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
-		78B0954131AF629924D0F1EA /* Pods_iOSBootstrap_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F408CC2F1C300A3D25A2D98 /* Pods_iOSBootstrap_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		78B0954131AF629924D0F1EA /* Pods_iOSBootstrap_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F408CC2F1C300A3D25A2D98 /* Pods_iOSBootstrap_Example.framework */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		CE8AD2971BC3F32000A6392F /* PBPersonMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8AD2961BC3F32000A6392F /* PBPersonMapper.m */; settings = {ASSET_TAGS = (); }; };
 		CE8AD29A1BC3F5AF00A6392F /* PBPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8AD2991BC3F5AF00A6392F /* PBPerson.m */; settings = {ASSET_TAGS = (); }; };
 		CE8AD2A41BC4B54900A6392F /* PBMapperInit.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8AD2A31BC4B54900A6392F /* PBMapperInit.m */; settings = {ASSET_TAGS = (); }; };
 		CE8AD2A81BC4EE5C00A6392F /* PersonService.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8AD2A71BC4EE5C00A6392F /* PersonService.m */; settings = {ASSET_TAGS = (); }; };
-		D6A49FC23D79A52AF24CE193 /* Pods_iOSBootstrap_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFD87B9C2B39015EC5638746 /* Pods_iOSBootstrap_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		D6A49FC23D79A52AF24CE193 /* Pods_iOSBootstrap_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFD87B9C2B39015EC5638746 /* Pods_iOSBootstrap_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */

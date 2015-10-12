@@ -46,7 +46,7 @@ Pod::Spec.new do |s|
   s.dependency 'SSKeychain'
   s.dependency 'TMCache'
   s.dependency 'UIColor+FlatColors'
-  s.dependency 'Realm'
+#s.dependency 'Realm'
   s.dependency 'ProtocolBuffers', '~> 1.9'
   s.dependency 'ZipArchive'
   s.dependency 'CocoaAsyncSocket'
@@ -54,7 +54,7 @@ Pod::Spec.new do |s|
   s.dependency 'UIImage+ImageCompress'
   s.dependency 'ArrayUtils'
   s.dependency 'QBImagePickerController'
-  s.dependency 'NSDate+TimeAgo', '~> 1.0'
+  s.dependency 'DateTools', '~> 1.7'
   s.dependency 'FMDB/SQLCipher'
 
 end

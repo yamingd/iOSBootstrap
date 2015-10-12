@@ -10,7 +10,6 @@
 
 @interface NSString (Ext)
 
--(NSString *)dateTimeAgo;
 -(NSString *)unescapeUnicode;
 -(NSString *)md5;
 -(NSString *)hmac:(NSString*)secret;

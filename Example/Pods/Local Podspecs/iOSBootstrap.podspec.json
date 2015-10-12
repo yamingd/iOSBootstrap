@@ -1,6 +1,6 @@
 {
   "name": "iOSBootstrap",
-  "version": "1.0.0",
+  "version": "1.3.0",
   "summary": "utility, security, delegate wrapper, protobuf support, realm support.",
   "description": "utility, security, delegate wrapper, protobuf support, realm support etc.",
   "homepage": "https://github.com/yamingd/iOSBootstrap",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/yamingd/iOSBootstrap.git",
-    "tag": "1.0.0"
+    "tag": "1.3.0"
   },
   "platforms": {
     "ios": "8.0"
@@ -46,9 +46,6 @@
     "UIColor+FlatColors": [
 
     ],
-    "Realm": [
-
-    ],
     "ProtocolBuffers": [
       "~> 1.9"
     ],
@@ -70,8 +67,8 @@
     "QBImagePickerController": [
 
     ],
-    "NSDate+TimeAgo": [
-      "~> 1.0"
+    "DateTools": [
+      "~> 1.7"
     ],
     "FMDB/SQLCipher": [
 
