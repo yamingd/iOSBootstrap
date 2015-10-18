@@ -24,6 +24,28 @@ _sharedObject = block(); \
 }); \
 return _sharedObject; \
 
+//单例宏
+#define SINGLETON_INTERFACE(className) +(className*)sharedInstance
+
+#define SINGLETON_IMPLE(className) \
++ (className *)sharedInstance {\
+static dispatch_once_t once;\
+static id instance;\
+dispatch_once(&once, ^{instance = self.new;});\
+return instance;\
+}
+
+//instance from Xib
+#define INSTANCE_XIB_INTERFACE +(instancetype)instanceFromXib;
+
+#define INSTANCE_XIB_IMPLE(className) \
++ (instancetype)instanceFromXib {\
+id instance = [XibFactory productWithNibClass:[className class]];\
+return instance;\
+}
+
+
+
 //for log, useage:use LOG instand of NSLog
 #ifdef DEBUG
 #define LOG(fmt, ...) NSLog((@"[%s,line:%d]\n>> " fmt), __FUNCTION__, __LINE__, ##__VA_ARGS__);

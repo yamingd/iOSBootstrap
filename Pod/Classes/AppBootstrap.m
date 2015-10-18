@@ -208,7 +208,7 @@
 }
 
 -(void)application:(UIApplication *)application prepareDatabase:(NSDictionary *)launchOptions{
-    self.sqliteContext = [[SqliteContext alloc] initWith:kSqliteTagDefault salt:nil];
+    self.sqliteContext = [[SqliteContext alloc] initWith:[self getAppNameString] salt:nil];
 }
 
 -(void)application:(UIApplication *)application prepareComponents:(NSDictionary *)launchOptions{

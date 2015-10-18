@@ -64,7 +64,7 @@
 }
 -(void)buildSqlForSave{
     NSMutableString* s = [NSMutableString string];
-    [s appendString:@"REPLACE INTO"];
+    [s appendString:@"REPLACE INTO "];
     [s appendString:_tableName];
     [s appendString:@"("];
     [s appendString:_selectFields];
@@ -93,7 +93,6 @@
 -(instancetype)init{
     self = [super init];
     if (self) {
-        [self prepareSql];
         [self prepare];
     }
     return self;
@@ -107,9 +106,10 @@
 }
 
 -(void)prepare{
+    // 子类完成自定义的属性设置后，调用父类prepare
+    [self prepareSql];
     [self ensureContext];
     [_sqliteContext initTable:self];
-    // 子类完成自定义的属性设置后，调用父类prepare
 }
 
 -(NSString*)filterNull:(NSString*)val{
