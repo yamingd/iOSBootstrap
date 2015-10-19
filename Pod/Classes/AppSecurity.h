@@ -16,17 +16,18 @@
 + (instancetype)instance;
 + (NSString*)randomCode;
 
-
-+ (NSString*)aes128Encrypt:(NSString*)text salt:(NSString*)salt iv:(NSString *)iv;
-+ (NSString*)aes128Decrypt:(NSString*)text salt:(NSString*)salt iv:(NSString *)iv;
-
 @property(strong, nonatomic, readonly) NSString* cookieId;
 @property(strong, nonatomic, readonly) NSString* cookieSalt;
+@property(strong, nonatomic, readonly) NSString* aesSeed;
 
--(void)config:(NSString*)cookieId salt:(NSString*)salt;
+-(void)config:(NSString*)cookieId salt:(NSString*)salt aesSeed:(NSString*)aesSeed;
 
 -(NSDictionary*)signSession:(PAppSession*)session;
 
 -(NSString*)signRequest:(NSString*)url;
+
+-(NSString*)aes128Encrypt:(NSString*)text;
+
+-(NSString*)aes128Decrypt:(NSString*)text;
 
 @end

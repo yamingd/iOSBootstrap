@@ -18,6 +18,13 @@
 static NSString* digits = @"0123456789abcdef";
 static const char chars[] = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLOMNOPQRSTUVWXYZ";
 
+@interface AppSecurity ()
+
+@property(strong, nonatomic) NSString* aesSalt;
+@property(strong, nonatomic) NSString* aesIV;
+
+@end
+
 @implementation AppSecurity
 
 + (instancetype)instance {
@@ -29,9 +36,23 @@ static const char chars[] = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLOMN
     return _shared;
 }
 
--(void)config:(NSString*)cookieId salt:(NSString*)salt{
+-(void)config:(NSString*)cookieId salt:(NSString*)salt aesSeed:(NSString*)aesSeed{
     _cookieId = cookieId;
     _cookieSalt = salt;
+    _aesSeed = aesSeed;
+    
+    NSString* tmp = [AppSecurity md5:aesSeed encoding:NSUTF8StringEncoding];
+    char chars[16];
+    
+    for (int i=0; i<16; i++) {
+        chars[i] = [tmp characterAtIndex:i * 2];
+    }
+    _aesSalt = [[NSString alloc] initWithBytes:chars length:16 encoding:NSUTF8StringEncoding];
+    
+    for (int i=0; i<16; i++) {
+        chars[i] = [tmp characterAtIndex:i * 2 + 1];
+    }
+    _aesIV = [[NSString alloc] initWithBytes:chars length:16 encoding:NSUTF8StringEncoding];
 }
 
 -(NSDictionary*)signSession:(PAppSession*)session{
@@ -122,15 +143,15 @@ static const char chars[] = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLOMN
     return sign;
 }
 
-+ (NSString*)aes128Encrypt:(NSString*)text salt:(NSString*)salt iv:(NSString *)iv{
+-(NSString*)aes128Encrypt:(NSString*)text{
     
     char keyPtr[kCCKeySizeAES128+1];
     memset(keyPtr, 0, sizeof(keyPtr));
-    [salt getCString:keyPtr maxLength:sizeof(keyPtr) encoding:NSUTF8StringEncoding];
+    [_aesSalt getCString:keyPtr maxLength:sizeof(keyPtr) encoding:NSUTF8StringEncoding];
     
     char ivPtr[kCCBlockSizeAES128+1];
     memset(ivPtr, 0, sizeof(ivPtr));
-    [iv getCString:ivPtr maxLength:sizeof(ivPtr) encoding:NSUTF8StringEncoding];
+    [_aesIV getCString:ivPtr maxLength:sizeof(ivPtr) encoding:NSUTF8StringEncoding];
     
     NSData* data = [text dataUsingEncoding:NSUTF8StringEncoding];
     NSUInteger dataLength = [data length];
@@ -226,19 +247,19 @@ static const char chars[] = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLOMN
     return tmp;
 }
 
-+ (NSString*)aes128Decrypt:(NSString*)text salt:(NSString*)salt iv:(NSString *)iv{
+-(NSString*)aes128Decrypt:(NSString*)text{
     
     NSData* data = [text dataUsingEncoding:NSASCIIStringEncoding];
     //hex to char
-    data = [self hexDecode:data];
+    data = [AppSecurity hexDecode:data];
     
     char keyPtr[kCCKeySizeAES128 + 1];
     memset(keyPtr, 0, sizeof(keyPtr));
-    [salt getCString:keyPtr maxLength:sizeof(keyPtr) encoding:NSUTF8StringEncoding];
+    [_aesSalt getCString:keyPtr maxLength:sizeof(keyPtr) encoding:NSUTF8StringEncoding];
     
     char ivPtr[kCCBlockSizeAES128 + 1];
     memset(ivPtr, 0, sizeof(ivPtr));
-    [iv getCString:ivPtr maxLength:sizeof(ivPtr) encoding:NSUTF8StringEncoding];
+    [_aesIV getCString:ivPtr maxLength:sizeof(ivPtr) encoding:NSUTF8StringEncoding];
     
     NSUInteger dataLength = [data length];
     size_t bufferSize = dataLength + kCCBlockSizeAES128;
