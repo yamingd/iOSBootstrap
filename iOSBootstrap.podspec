@@ -45,7 +45,7 @@ Pod::Spec.new do |s|
   s.dependency 'SDWebImage'
   s.dependency 'SSKeychain'
   s.dependency 'TMCache'
-  s.dependency 'UIColor+BFPaperColors', :head
+  s.dependency 'UIColor+BFPaperColors'
 #s.dependency 'Realm'
   s.dependency 'ProtocolBuffers', '~> 1.9'
 #s.dependency 'ZipArchive'

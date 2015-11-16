@@ -97,9 +97,8 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-iOSBootstrap_Tests/SQLCipher.framework"
   install_framework "Pods-iOSBootstrap_Tests/SSKeychain.framework"
   install_framework "Pods-iOSBootstrap_Tests/TMCache.framework"
-  install_framework "Pods-iOSBootstrap_Tests/UIColor_FlatColors.framework"
+  install_framework "Pods-iOSBootstrap_Tests/UIColor_BFPaperColors.framework"
   install_framework "Pods-iOSBootstrap_Tests/UIImage_ImageCompress.framework"
-  install_framework "Pods-iOSBootstrap_Tests/ZipArchive.framework"
   install_framework "Pods-iOSBootstrap_Tests/iOSBootstrap.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -116,8 +115,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-iOSBootstrap_Tests/SQLCipher.framework"
   install_framework "Pods-iOSBootstrap_Tests/SSKeychain.framework"
   install_framework "Pods-iOSBootstrap_Tests/TMCache.framework"
-  install_framework "Pods-iOSBootstrap_Tests/UIColor_FlatColors.framework"
+  install_framework "Pods-iOSBootstrap_Tests/UIColor_BFPaperColors.framework"
   install_framework "Pods-iOSBootstrap_Tests/UIImage_ImageCompress.framework"
-  install_framework "Pods-iOSBootstrap_Tests/ZipArchive.framework"
   install_framework "Pods-iOSBootstrap_Tests/iOSBootstrap.framework"
 fi
