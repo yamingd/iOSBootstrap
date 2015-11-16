@@ -28,11 +28,6 @@
     [self application:application prepareDatabase:launchOptions];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    if(OSVersionIsAtLeastiOS7){
-        [self.window setTintColor:kColor_tint];
-        [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:kColor_text}];
-    }
-    
     [self application:application prepareRootController:launchOptions];
     
     return YES;
@@ -64,22 +59,7 @@
         }
     }
     
-    if ([self shouldEnableAPNS]) {
-        
-        //-- Set Notification
-        if ([application respondsToSelector:@selector(isRegisteredForRemoteNotifications)])
-        {
-            // iOS 8 Notifications
-            [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
-            
-            [application registerForRemoteNotifications];
-        }
-        else
-        {
-            // iOS < 8 Notifications
-            [application registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound)];
-        }
-    }
+    [self application:application prepareAPNSToken:launchOptions];
     
     // Set the app badge to 0 when launching
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
@@ -180,6 +160,25 @@
 }
 
 #pragma mark - prepare
+
+-(void)application:(UIApplication *)application prepareAPNSToken:(NSDictionary *)launchOptions{
+    if ([self shouldEnableAPNS]) {
+        
+        //-- Set Notification
+        if ([application respondsToSelector:@selector(isRegisteredForRemoteNotifications)])
+        {
+            // iOS 8 Notifications
+            [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
+            
+            [application registerForRemoteNotifications];
+        }
+        else
+        {
+            // iOS < 8 Notifications
+            [application registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound)];
+        }
+    }
+}
 
 -(void)application:(UIApplication *)application prepareAppSession:(NSDictionary *)launchOptions{
     [[AppSession current] load:[self getAppNameString]];
