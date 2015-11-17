@@ -121,6 +121,8 @@
     LOG(@"postPath: %@", urlString);
 #endif
     
+    [self encrpyRequestWith:urlString requestSerializer:self.requestSerializer];
+    
     if (formBody) {
         
         [self POST:urlString parameters:params constructingBodyWithBlock:formBody success:^(NSURLSessionDataTask *task, id data) {
@@ -145,6 +147,8 @@
             params:(NSDictionary *)params
              withCallback:(void (^)(id response, NSError* error))block{
     
+    [self encrpyRequestWith:urlString requestSerializer:self.requestSerializer];
+    
     [self DELETE:urlString parameters:params success:^(NSURLSessionDataTask *task, id data) {
         [self parseData:data block:block];
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
@@ -157,6 +161,8 @@
          params:(NSDictionary *)params
           withCallback:(void (^)(id response, NSError* error))block{
     
+    [self encrpyRequestWith:urlString requestSerializer:self.requestSerializer];
+    
     [self PUT:urlString parameters:params success:^(NSURLSessionDataTask *task, id data) {
         [self parseData:data block:block];
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
@@ -168,6 +174,8 @@
 -(void) patchPath:(NSString *)urlString
          params:(NSDictionary *)params
           withCallback:(void (^)(id response, NSError* error))block{
+    
+    [self encrpyRequestWith:urlString requestSerializer:self.requestSerializer];
     
     [self PATCH:urlString parameters:params success:^(NSURLSessionDataTask *task, id data) {
         [self parseData:data block:block];
@@ -192,12 +200,13 @@
     if ([urlString hasPrefix:@"http://"] || [urlString hasPrefix:@"https://"]) {
         
     }else{
+        [self encrpyRequestWith:urlString requestSerializer:self.requestSerializer];
         urlString = [NSString stringWithFormat:@"%@%@", self.baseUrlString, urlString];
     }
     
     NSURL *URL = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-
+    
     NSURLSessionDownloadTask *downloadTask = [self downloadTaskWithRequest:request
                                                                   progress:nil
                                                                destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
@@ -255,6 +264,7 @@
     if ([urlString hasPrefix:@"http://"] || [urlString hasPrefix:@"https://"]) {
         
     }else{
+        [self encrpyRequestWith:urlString requestSerializer:self.requestSerializer];
         urlString = [NSString stringWithFormat:@"%@%@", self.baseUrlString, urlString];
     }
     
