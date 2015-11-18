@@ -159,7 +159,7 @@
 -(void)alterTable:(NSString*)name columns:(NSDictionary*)columns oldColumns:(NSSet*)oldColumns{
     [self ensureDbOpen];
     @synchronized(self) {
-        __block NSString* sql0 = @"alter table %s add column %s %s";
+        __block NSString* sql0 = @"alter table %@ add column %@ %@";
         [_dbQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
             
             for (NSString* col in columns) {
@@ -192,6 +192,7 @@
     [_dbQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
         @try {
             block(db);
+            *rollback = NO;
         }
         @catch (NSException *exception) {
             LOG(@"Error: %@", exception);

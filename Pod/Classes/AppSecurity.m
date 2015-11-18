@@ -67,7 +67,7 @@ static const char chars[] = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLOMN
     //cookie
     NSString* cookieSecret = [AppSecurity md5:self.cookieSalt encoding:NSUTF8StringEncoding];
     NSString* timestamp = [NSString stringWithFormat:@"%f", [[NSDate date] timeIntervalSince1970]];
-    NSData* ds = [[[NSNumber numberWithBool:session.userId] stringValue] dataUsingEncoding:NSUTF8StringEncoding];
+    NSData* ds = [[[NSNumber numberWithLong:session.userId] stringValue] dataUsingEncoding:NSUTF8StringEncoding];
     NSString* uv = [NSString base64StringFromData:ds length:ds.length];
     //uv = [Utility urlEscape:uv];
     //LOG(@"uv:%@", uv);

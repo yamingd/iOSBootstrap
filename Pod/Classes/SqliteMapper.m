@@ -73,7 +73,7 @@
     for (NSString* col in _columns) {
         [s appendString:S_QMARK];
     }
-    [s deleteCharactersInRange:NSMakeRange(s.length-1, 1)];
+    [s deleteCharactersInRange:NSMakeRange(s.length-2, 2)];
     [s appendString:@")"];
     
     _sqlForSave = s;
@@ -192,6 +192,7 @@
         while ([rs next]) {
             item = [weakSelf map:rs withItem:nil];
         }
+        [rs close];
     }];
     if (ref) {
         [self wrap:item withRef:ref];
@@ -214,6 +215,7 @@
             id item = [weakSelf map:rs withItem:nil];
             [result addObject:item];
         }
+        [rs close];
     }];
     if (ref) {
         [self wrapList:result withRef:ref];
@@ -337,6 +339,7 @@
         while ([rs next]) {
             total = [rs intForColumnIndex:0];
         }
+        [rs close];
     }];
     return total;
 }
@@ -356,6 +359,7 @@
         while ([rs next]) {
             total = [rs intForColumnIndex:0];
         }
+        [rs close];
     }];
     return total;
 }
@@ -375,6 +379,7 @@
         while ([rs next]) {
             val = [rs objectForColumnIndex:0];
         }
+        [rs close];
     }];
     return val;
 }
@@ -394,6 +399,7 @@
         while ([rs next]) {
             val = [rs objectForColumnIndex:0];
         }
+        [rs close];
     }];
     return val;
 }
@@ -417,6 +423,7 @@
             id item = [weakSelf map:rs withItem:nil];
             [val addObject:item];
         }
+        [rs close];
     }];
     if (ref) {
         [self wrapList:val withRef:ref];
@@ -444,6 +451,7 @@
             id item = [weakSelf map:rs withItem:nil];
             [val addObject:item];
         }
+        [rs close];
     }];
     if (ref) {
         [self wrapList:val withRef:ref];
@@ -469,6 +477,7 @@
             id item = [rs objectForColumnIndex:0];
             [val addObject:item];
         }
+        [rs close];
     }];
     return val;
 }
@@ -480,6 +489,7 @@
         while (rs.next) {
             block(rs);
         }
+        [rs close];
     }];
 }
 -(void)update:(NSString*)tag sql:(NSString*)sql withArgs:(NSArray*)args{

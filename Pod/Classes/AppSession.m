@@ -111,13 +111,30 @@
 }
 
 -(void)clear{
-    
     _sessionBuilder.userId = 0;
     _sessionBuilder.userName = @"Guest";
     _sessionBuilder.realName = @"Guest";
     _session = [_sessionBuilder build];
-
+    
     [self save];
+}
+
+- (void)wrapDevivceApp{
+    _sessionBuilder.osName = [DeviceHelper getOSName];
+    _sessionBuilder.osVersion = [DeviceHelper getOSVersion];
+    _sessionBuilder.deviceName = [DeviceHelper getDeviceName];
+    _sessionBuilder.deviceScreenSize = [DeviceHelper getScreenSize];
+    _sessionBuilder.packageName = [DeviceHelper getAppName];
+    _sessionBuilder.packageVersion = [DeviceHelper getAppVersion];
+    if (!_sessionBuilder.deviceToken) {
+        _sessionBuilder.deviceToken = @"NULL";
+    }
+    _sessionBuilder.deviceId = [DeviceHelper getDeviceUdid];
+    _sessionBuilder.appName = _appName;
+    
+    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    _sessionBuilder.localeIdentifier = [[NSLocale currentLocale] objectForKey:NSLocaleLanguageCode];
+    _userAgent = [NSString stringWithFormat:@"%@/%@ (%@; %@; %@)", _appName, version, [[UIDevice currentDevice] model], [[UIDevice currentDevice] systemVersion], _sessionBuilder.localeIdentifier];
 }
 
 -(void)save{
@@ -130,7 +147,11 @@
         [_sessionDb update:@"insertSession" block:^(FMDatabase *db) {
             [db executeUpdate:SESSION_INSERT, @"session", data];
         }];
+        _hasRecord = YES;
     }
+    
+    [_sessionBuilder clear];
+    [self wrapDevivceApp];
 }
 
 - (void)load:(NSString*)appName{
@@ -147,23 +168,10 @@
             [_sessionBuilder mergeFromData:data];
             break;
         }
+        [rs close];
     }];
     
-    _sessionBuilder.osName = [DeviceHelper getOSName];
-    _sessionBuilder.osVersion = [DeviceHelper getOSVersion];
-    _sessionBuilder.deviceName = [DeviceHelper getDeviceName];
-    _sessionBuilder.deviceScreenSize = [DeviceHelper getScreenSize];
-    _sessionBuilder.packageName = [DeviceHelper getAppName];
-    _sessionBuilder.packageVersion = [DeviceHelper getAppVersion];
-    if (!_sessionBuilder.deviceToken) {
-        _sessionBuilder.deviceToken = @"NULL";
-    }
-    _sessionBuilder.deviceId = [DeviceHelper getDeviceUdid];
-    _sessionBuilder.appName = appName;
-    
-    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
-    _sessionBuilder.localeIdentifier = [[NSLocale currentLocale] objectForKey:NSLocaleLanguageCode];
-    _userAgent = [NSString stringWithFormat:@"%@/%@ (%@; %@; %@)", appName, version, [[UIDevice currentDevice] model], [[UIDevice currentDevice] systemVersion], _sessionBuilder.localeIdentifier];
+    [self wrapDevivceApp];
     
     _session = [_sessionBuilder build];
     
