@@ -3,35 +3,49 @@
 //  k12
 //
 //  Created by Yaming on 3/13/15.
-//  Copyright (c) 2015 jiaxiaobang.com. All rights reserved.
+//  Copyright (c) 2015 www.github.com/yamingd. All rights reserved.
 //
 
 #import "UIImageEdView.h"
 #import "UIImageView+Ext.h"
 #import "UIImageView+WebCache.h"
+#import "boost.h"
 
 @implementation UIImageEdView
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect {
+ // Drawing code
+ }
+ */
 
--(instancetype)setRemoveIcon:(NSString *)iconName{
+-(instancetype)setRemoveIcon:(NSString *)iconName bgcolor:(UIColor*)bgcolor{
     float width = self.frame.size.width;
     _removeIconName = iconName;
     _enableRemove = YES;
-    _imgRemoveIcon = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_imgRemoveIcon setImage:[UIImage imageNamed:iconName] forState:UIControlStateNormal];
-    [_imgRemoveIcon sizeToFit];
-    [_imgRemoveIcon setFrame:CGRectMake(width - 20, 0, 20, 20)];
-    [self addSubview:_imgRemoveIcon];
-    _imgRemoveIcon.tag = 1;
-    [_imgRemoveIcon addTarget:self action:@selector(onDeleteButtonTouched) forControlEvents:UIControlEventTouchUpInside];
+    if (!_imgRemoveIcon) {
+        _imgRemoveIcon = [UIButton buttonWithType:UIButtonTypeCustom];
+        if (bgcolor) {
+            [_imgRemoveIcon setBackgroundColor:bgcolor];
+        }
+        [_imgRemoveIcon setImage:[UIImage imageNamed:iconName] forState:UIControlStateNormal];
+        [_imgRemoveIcon sizeToFit];
+        [_imgRemoveIcon setFrame:CGRectMake(width - 20, 0, 20, 20)];
+        [self addSubview:_imgRemoveIcon];
+        _imgRemoveIcon.tag = 1;
+        [_imgRemoveIcon addTarget:self action:@selector(onDeleteButtonTouched) forControlEvents:UIControlEventTouchUpInside];
+    }
     return self;
+}
+
+-(void)disableRemove{
+    if (_imgRemoveIcon) {
+        _imgRemoveIcon.hidden = YES;
+        [_imgRemoveIcon removeFromSuperview];
+        _imgRemoveIcon = nil;
+    }
 }
 
 -(instancetype)setImagehUrl:(NSString *)thumbUrl bigUrl:(NSString *)bigUrl holder:(NSString*)holder{
@@ -59,13 +73,13 @@
 
 -(instancetype)setEnableEnlarge:(BOOL)able{
     _enableEnlarge = able;
-    
-    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                                              action:@selector(onImageTouched:)];
-    [gesture setNumberOfTapsRequired:1];
-    [self setUserInteractionEnabled:YES];
-    [self addGestureRecognizer:gesture];
-    
+    if (able) {
+        UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                  action:@selector(onImageTouched:)];
+        [gesture setNumberOfTapsRequired:1];
+        [self setUserInteractionEnabled:YES];
+        [self addGestureRecognizer:gesture];
+    }
     return self;
 }
 
@@ -134,9 +148,18 @@
 }
 
 -(void)onDeleteButtonTouched{
-    [self removeFromSuperview];
+    if (_imgRemoveIcon) {
+        [_imgRemoveIcon removeFromSuperview];
+    }
     if (self.delegate) {
-        [self.delegate onUIImageEdViewDeleted:self];
+        if ([self.delegate respondsToSelector:@selector(onUIImageEdViewDeleted:)]) {
+            BOOL flag = [self.delegate onUIImageEdViewDeleted:self.data];
+            if (flag) {
+                [self removeFromSuperview];
+            }
+        }
+    }else{
+        [self removeFromSuperview];
     }
 }
 

@@ -1,6 +1,6 @@
 //
 //  DeviceHelper.h
-//  MyKingdee
+//  www.github.com/yamingd
 //
 //
 

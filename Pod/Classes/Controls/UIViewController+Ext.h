@@ -3,7 +3,7 @@
 //  EnglishCafe
 //
 //  Created by yaming_deng on 15/5/14.
-//  Copyright (c) 2014 whosbean. All rights reserved.
+//  Copyright (c) 2014 www.github.com/yamingd. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

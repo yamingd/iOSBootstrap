@@ -3,7 +3,7 @@
 //  AppBootstrap
 //
 //  Created by Yaming on 10/2/15.
-//  Copyright © 2015 whosbean.com. All rights reserved.
+//  Copyright © 2015 www.github.com/yamingd. All rights reserved.
 //
 
 #ifdef REALM_DB

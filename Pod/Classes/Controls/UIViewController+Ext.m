@@ -3,7 +3,7 @@
 //  EnglishCafe
 //  http://imallen.com/blog/2013/10/22/how-to-set-bartintcolor-correctly-in-ios-7.html
 //  Created by yaming_deng on 15/5/14.
-//  Copyright (c) 2014 whosbean. All rights reserved.
+//  Copyright (c) 2014 www.github.com/yamingd. All rights reserved.
 //
 
 #import "boost.h"

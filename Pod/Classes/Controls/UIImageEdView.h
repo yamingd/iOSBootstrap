@@ -3,7 +3,7 @@
 //  k12
 //
 //  Created by Yaming on 3/13/15.
-//  Copyright (c) 2015 jiaxiaobang.com. All rights reserved.
+//  Copyright (c) 2015 www.github.com/yamingd. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -16,7 +16,8 @@
 @protocol UIImageEdViewDelegate <NSObject>
 
 @optional
--(void)onUIImageEdViewDeleted:(id)sender;
+
+- (BOOL)onUIImageEdViewDeleted:(id)sender;
 
 - (void)onPresentEnlargeImageView:(UIImageEdView *)imageView;
 - (void)onDismissEnlargeImageView:(UIImageEdView *)imageView;
@@ -39,7 +40,8 @@
 
 -(instancetype)setEnableEnlarge:(BOOL)able;
 
--(instancetype)setRemoveIcon:(NSString*)iconName;
+-(instancetype)setRemoveIcon:(NSString*)iconName bgcolor:(UIColor*)bgcolor;
+-(void)disableRemove;
 
 -(instancetype)setImagehUrl:(NSString*)thumbUrl bigUrl:(NSString*)bigUrl holder:(NSString*)holder;
 -(instancetype)setImagehUrl:(NSString *)thumbUrl bigUrl:(NSString *)bigUrl holderImage:(UIImage*)holderImage;

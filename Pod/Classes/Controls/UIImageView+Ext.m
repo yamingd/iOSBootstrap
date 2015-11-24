@@ -3,7 +3,7 @@
 //  EnglishCafe
 //  https://github.com/rs/SDWebImage
 //  Created by yaming_deng on 14/5/14.
-//  Copyright (c) 2014 whosbean. All rights reserved.
+//  Copyright (c) 2014 www.github.com/yamingd. All rights reserved.
 //
 
 #import "UIImageView+Ext.h"

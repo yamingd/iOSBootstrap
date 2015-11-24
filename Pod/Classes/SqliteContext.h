@@ -3,7 +3,7 @@
 //  Pods
 //
 //  Created by Yaming on 10/6/15.
-//
+//  www.github.com/yamingd
 //
 
 #import <Foundation/Foundation.h>

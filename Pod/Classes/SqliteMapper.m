@@ -58,6 +58,7 @@
     
     [s deleteCharactersInRange:NSMakeRange(s.length-2, 2)];
     [s appendString:FROM];
+    [s appendString:_tableName];
     [s appendFormat:@"%@ %@ = ?", WHERE, _pkColumn];
     
     _sqlForGet = s;
@@ -165,11 +166,13 @@
 }
 
 #pragma mark - Wrap
--(void)wrap:(id)item withRef:(BOOL)ref{
+-(id)wrap:(id)item withRef:(BOOL)ref{
     //在子类实现
+    return item;
 }
--(void)wrapList:(NSArray*)items withRef:(BOOL)ref{
+-(id)wrapList:(NSArray*)items withRef:(BOOL)ref{
     //在子类实现
+    return items;
 }
 -(void)saveRef:(id)item{
     //在子类实现
@@ -195,7 +198,7 @@
         [rs close];
     }];
     if (ref) {
-        [self wrap:item withRef:ref];
+        item = [self wrap:item withRef:ref];
     }
     return item;
 }
@@ -218,7 +221,7 @@
         [rs close];
     }];
     if (ref) {
-        [self wrapList:result withRef:ref];
+        result = [self wrapList:result withRef:ref];
     }
     return result;
 }
@@ -426,7 +429,7 @@
         [rs close];
     }];
     if (ref) {
-        [self wrapList:val withRef:ref];
+        val = [self wrapList:val withRef:ref];
     }
     return val;
 }
@@ -454,7 +457,7 @@
         [rs close];
     }];
     if (ref) {
-        [self wrapList:val withRef:ref];
+        val = [self wrapList:val withRef:ref];
     }
     return val;
 }

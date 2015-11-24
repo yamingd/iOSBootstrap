@@ -3,7 +3,7 @@
 //  AppBootstrap
 //
 //  Created by Yaming on 10/31/14.
-//  Copyright (c) 2014 whosbean.com. All rights reserved.
+//  Copyright (c) 2014 www.github.com/yamingd. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

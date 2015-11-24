@@ -3,7 +3,7 @@
 //  Pods
 //
 //  Created by Yaming on 10/6/15.
-//
+//  www.github.com/yamingd
 //
 
 #import <Foundation/Foundation.h>
@@ -82,8 +82,9 @@
 -(NSArray*)selectPks:(NSString*)tag where:(NSString*)where order:(NSString*)order withArgs:(NSArray*)args;
 
 #pragma mark - Wrap
--(void)wrap:(id)item withRef:(BOOL)ref;
--(void)wrapList:(NSArray*)items withRef:(BOOL)ref;
+-(id)wrap:(id)item withRef:(BOOL)ref;
+-(id)wrapList:(NSArray*)items withRef:(BOOL)ref;
+
 -(void)saveRef:(id)item;
 -(void)saveRefList:(NSArray*)items;
 
