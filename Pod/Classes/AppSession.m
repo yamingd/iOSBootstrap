@@ -151,6 +151,7 @@
     }
     
     [_sessionBuilder clear];
+    _sessionBuilder = [[PAppSession builder] mergeFrom:_session];
     [self wrapDevivceApp];
 }
 
