@@ -24,16 +24,16 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - ArrayUtils (1.3)
-  - CocoaAsyncSocket (7.4.2)
+  - CocoaAsyncSocket (7.5.0):
+    - CocoaAsyncSocket/GCD (= 7.5.0)
+  - CocoaAsyncSocket/GCD (7.5.0)
   - DateTools (1.7.0)
-  - FMDB/common (2.5)
-  - FMDB/SQLCipher (2.5):
-    - FMDB/common
+  - FMDB/SQLCipher (2.6.2):
     - SQLCipher
   - HTKDynamicResizingCell (0.0.2)
-  - iOSBootstrap (1.4.3):
+  - iOSBootstrap (1.4.5):
     - AFNetworkActivityLogger (~> 2.0)
-    - AFNetworking (~> 2.3)
+    - AFNetworking (~> 2.6)
     - ArrayUtils
     - CocoaAsyncSocket
     - DateTools (~> 1.7)
@@ -46,19 +46,19 @@ PODS:
     - TMCache
     - UIColor+BFPaperColors
     - UIImage+ImageCompress
-  - ProtocolBuffers (1.9.9.2)
-  - QBImagePickerController (3.2.0)
-  - SDWebImage (3.7.3):
-    - SDWebImage/Core (= 3.7.3)
-  - SDWebImage/Core (3.7.3)
-  - SQLCipher (3.1.0):
-    - SQLCipher/standard (= 3.1.0)
-  - SQLCipher/common (3.1.0)
-  - SQLCipher/standard (3.1.0):
+  - ProtocolBuffers (1.9.11)
+  - QBImagePickerController (3.4.0)
+  - SDWebImage (3.8.1):
+    - SDWebImage/Core (= 3.8.1)
+  - SDWebImage/Core (3.8.1)
+  - SQLCipher (3.4.0):
+    - SQLCipher/standard (= 3.4.0)
+  - SQLCipher/common (3.4.0)
+  - SQLCipher/standard (3.4.0):
     - SQLCipher/common
-  - SSKeychain (1.2.3)
+  - SSKeychain (1.4.1)
   - TMCache (2.1.0)
-  - UIColor+BFPaperColors (1.7.2)
+  - UIColor+BFPaperColors (1.7.6)
   - UIImage+ImageCompress (0.0.1)
 
 DEPENDENCIES:
@@ -66,24 +66,24 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   iOSBootstrap:
-    :path: "../"
+    :path: ../
 
 SPEC CHECKSUMS:
   AFNetworkActivityLogger: 121486778117d53b3ab1c61d264b88081d0c3eee
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   ArrayUtils: 1444c5aab693bf1c8bde31145e10fc7c5cf930bf
-  CocoaAsyncSocket: f5783bdedd232d91b89769bc4b5a1580aed518ad
+  CocoaAsyncSocket: 3baeb1ddd969f81cf9fca81053ae49ef2d1cbbfa
   DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
-  FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
+  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   HTKDynamicResizingCell: 9358514816f0737a8d20329617ee126a1498357c
-  iOSBootstrap: 957ddd9612e87b961b06c6374a5b6b5a2e26f384
-  ProtocolBuffers: 7111461618460961e6b7469177ec45ee551b4f0e
-  QBImagePickerController: 75b3857b1307a3c01ce486559bc294f802ddec6c
-  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
-  SQLCipher: c44fcca49c31483c2489cfb79aa7a69407f3794a
-  SSKeychain: 3f42991739c6c60a9cf1bbd4dff6c0d3694bcf3d
+  iOSBootstrap: 073a446610270efb256d438e25f9e4c462592c78
+  ProtocolBuffers: d509225eb2ea43d9582a59e94348fcf86e2abd65
+  QBImagePickerController: d54cf93db6decf26baf6ed3472f336ef35cae022
+  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  SQLCipher: 4c768761421736a247ed6cf412d9045615d53dff
+  SSKeychain: 55cc80f66f5c73da827e3077f02e43528897db41
   TMCache: 95ebcc9b3c7e90fb5fd8fc3036cba3aa781c9bed
-  UIColor+BFPaperColors: 03101fe6c10ed00c6daae7c26553f1de41500853
+  UIColor+BFPaperColors: 37e7b48fa86b29ff2e97a11208ab9cb5ab0b883d
   UIImage+ImageCompress: 6b38489f38075d569d9f25d72af7ecf5c84c1057
 
 COCOAPODS: 0.39.0

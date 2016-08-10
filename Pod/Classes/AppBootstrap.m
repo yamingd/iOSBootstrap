@@ -24,6 +24,7 @@
     
     LOG(@"willFinishLaunchingWithOptions");
     
+    [self application:application prepareOpenControllers:launchOptions];
     [self application:application prepareAppSession:launchOptions];
     [self application:application prepareDatabase:launchOptions];
     
@@ -72,8 +73,6 @@
     if (self.userNotification) {
         [EventPoster send:kRemoteNotificationReceived userInfo:self.userNotification];
     }
-    
-    [self application:application prepareOpenControllers:launchOptions];
     
     return YES;
     
