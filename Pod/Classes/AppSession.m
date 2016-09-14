@@ -119,8 +119,8 @@
     _sessionBuilder.userId = 0;
     _sessionBuilder.userName = @"Guest";
     _sessionBuilder.realName = @"Guest";
+    [self genSessionId];
     _session = [_sessionBuilder build];
-    
     [self save];
 }
 
@@ -159,7 +159,10 @@
     _sessionBuilder = [[PAppSession builder] mergeFrom:_session];
     [self wrapDevivceApp];
 }
-
+- (void)genSessionId{
+    NSString* tmp = [NSString stringWithFormat:@"%f:%@:%@", [NSDate date].timeIntervalSince1970, _sessionBuilder.deviceId, _sessionBuilder.appName];
+    _sessionBuilder.sessionId = [AppSecurity md5:tmp encoding:kCFStringEncodingUTF8];
+}
 - (void)load:(NSString*)appName{
     //load session from db file.
     _appName = appName;
@@ -179,8 +182,7 @@
     
     [self wrapDevivceApp];
     
-    NSString* tmp = [NSString stringWithFormat:@"%f:%@:%@", [NSDate date].timeIntervalSince1970, _sessionBuilder.deviceId, _sessionBuilder.appName];
-    _sessionBuilder.sessionId = [AppSecurity md5:tmp encoding:kCFStringEncodingUTF8];
+    [self genSessionId];
     
     _session = [_sessionBuilder build];
     
