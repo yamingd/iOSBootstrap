@@ -35,6 +35,7 @@
 
 - (void)remember:(long)userId userName:(NSString*)userName realName:(NSString*)realName userKind:(int)userKind;
 - (void)saveDeviceToken:(NSString*)token;
+- (void)resetSessionId:(NSString*)sessionId;
 
 - (void)clear;
 - (void)load:(NSString*)appName;

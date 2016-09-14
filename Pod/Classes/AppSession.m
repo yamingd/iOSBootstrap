@@ -110,6 +110,11 @@
     [self save];
 }
 
+- (void)resetSessionId:(NSString*)sessionId{
+    _sessionBuilder.sessionId = sessionId;
+    _session = [_sessionBuilder build];
+}
+
 -(void)clear{
     _sessionBuilder.userId = 0;
     _sessionBuilder.userName = @"Guest";
@@ -173,6 +178,9 @@
     }];
     
     [self wrapDevivceApp];
+    
+    NSString* tmp = [NSString stringWithFormat:@"%f:%@:%@", [NSDate date].timeIntervalSince1970, _sessionBuilder.deviceId, _sessionBuilder.appName];
+    _sessionBuilder.sessionId = [AppSecurity md5:tmp encoding:kCFStringEncodingUTF8];
     
     _session = [_sessionBuilder build];
     

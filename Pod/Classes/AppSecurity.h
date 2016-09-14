@@ -15,6 +15,7 @@
 
 + (instancetype)instance;
 + (NSString*)randomCode;
++ (NSString*)md5:(NSString*)raw encoding:(NSStringEncoding)encoding;
 
 @property(strong, nonatomic, readonly) NSString* cookieId;
 @property(strong, nonatomic, readonly) NSString* cookieSalt;
