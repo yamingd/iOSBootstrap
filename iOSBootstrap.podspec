@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "iOSBootstrap"
-  s.version          = "1.5.2"
+  s.version          = "1.5.3"
   s.summary          = "utility, security, delegate wrapper, protobuf support, realm support."
 
 # This description is used to generate tags and improve search results.

@@ -66,7 +66,7 @@
     PAppResponseBuilder *builder = [PAppResponse builder];
     [builder setCode:(int)error.code];
     if ([error code] == -1001 || [error code] == -1009) {
-        [builder setMsg: @"Network is unstable. connection timeout"];
+        [builder setMsg: error.localizedDescription];
         [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationNetworkError object:nil userInfo:nil];
     }else{
         [builder setMsg: error.localizedDescription];
