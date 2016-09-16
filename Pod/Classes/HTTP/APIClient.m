@@ -72,7 +72,7 @@
         [builder setMsg: error.localizedDescription];
     }
     if (block) {
-        block(nil, error);
+        block([builder build], error);
     }
 }
 
@@ -80,8 +80,8 @@
     NSError* error = nil;
     PAppResponse* resp = (PAppResponse*)data;
     if (resp.code > 200) {
-        error = [NSError errorWithDomain:resp.msg code:resp.code userInfo:@{@"resp": resp}];
-        block(nil, error);
+        error = [NSError errorWithDomain:@"APICallError" code:resp.code userInfo:nil];
+        block(resp, error);
         if (resp.code == 500) {
             [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationServerError object:nil userInfo:nil];
         }
