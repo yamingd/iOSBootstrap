@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "iOSBootstrap"
-  s.version          = "1.5.3"
+  s.version          = "1.5.5"
   s.summary          = "utility, security, delegate wrapper, protobuf support, realm support."
 
 # This description is used to generate tags and improve search results.
@@ -33,9 +33,9 @@ Pod::Spec.new do |s|
   s.source_files = 'Pod/Classes/**/*'
   s.exclude_files = 'Pod/Classes/**/*.proto', 'Pod/Classes/**/*.sh'
   
-  s.resource_bundles = {
-    'iOSBootstrap' => ['Pod/Assets/*.png']
-  }
+  #s.resource_bundles = {
+  #  'iOSBootstrap' => ['Pod/Assets/*.png']
+  #}
 
   s.public_header_files = 'Pod/Classes/**/*.h'
 
