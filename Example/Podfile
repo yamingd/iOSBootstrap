@@ -2,11 +2,11 @@ source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 platform :ios, '8.0'
 
-target 'iOSBootstrap_Example', :exclusive => true do
+target 'iOSBootstrap_Example' do
   pod "iOSBootstrap", :path => "../"
 end
 
-target 'iOSBootstrap_Tests', :exclusive => true do
+target 'iOSBootstrap_Tests' do
   pod "iOSBootstrap", :path => "../"
 
   

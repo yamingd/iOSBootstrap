@@ -23,10 +23,10 @@
 +(void)findMore:(int)page cursorId:(long)cursorId withCallback:(APIResponseBlock)block;
 
 // 主键查找
-+(void)findBy:(long)itemId withRef:(BOOL)withRef withCallback:(APIResponseBlock*)block;
++(void)findBy:(int)itemId withRef:(BOOL)withRef withCallback:(APIResponseBlock)block;
 
 // 从服务器读取
-+(void)loadBy:(long)itemId withCallback:(APIResponseBlock*)block;
++(void)loadBy:(int)itemId withCallback:(APIResponseBlock)block;
 
 #pragma mark - Create
 

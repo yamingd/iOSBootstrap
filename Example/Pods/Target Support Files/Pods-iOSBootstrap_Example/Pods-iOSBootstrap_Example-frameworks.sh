@@ -16,7 +16,7 @@ install_framework()
     local source="$1"
   fi
 
-  local destination="${CONFIGURATION_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
+  local destination="${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
 
   if [ -L "${source}" ]; then
       echo "Symlinked..."
@@ -59,8 +59,8 @@ code_sign_if_enabled() {
   if [ -n "${EXPANDED_CODE_SIGN_IDENTITY}" -a "${CODE_SIGNING_REQUIRED}" != "NO" -a "${CODE_SIGNING_ALLOWED}" != "NO" ]; then
     # Use the current code_sign_identitiy
     echo "Code Signing $1 with Identity ${EXPANDED_CODE_SIGN_IDENTITY_NAME}"
-    echo "/usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} --preserve-metadata=identifier,entitlements \"$1\""
-    /usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} --preserve-metadata=identifier,entitlements "$1"
+    echo "/usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} ${OTHER_CODE_SIGN_FLAGS} --preserve-metadata=identifier,entitlements \"$1\""
+    /usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} ${OTHER_CODE_SIGN_FLAGS} --preserve-metadata=identifier,entitlements "$1"
   fi
 }
 
@@ -84,38 +84,36 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "Pods-iOSBootstrap_Example/AFNetworkActivityLogger.framework"
-  install_framework "Pods-iOSBootstrap_Example/AFNetworking.framework"
-  install_framework "Pods-iOSBootstrap_Example/ArrayUtils.framework"
-  install_framework "Pods-iOSBootstrap_Example/CocoaAsyncSocket.framework"
-  install_framework "Pods-iOSBootstrap_Example/DateTools.framework"
-  install_framework "Pods-iOSBootstrap_Example/FMDB.framework"
-  install_framework "Pods-iOSBootstrap_Example/HTKDynamicResizingCell.framework"
-  install_framework "Pods-iOSBootstrap_Example/ProtocolBuffers.framework"
-  install_framework "Pods-iOSBootstrap_Example/QBImagePickerController.framework"
-  install_framework "Pods-iOSBootstrap_Example/SDWebImage.framework"
-  install_framework "Pods-iOSBootstrap_Example/SQLCipher.framework"
-  install_framework "Pods-iOSBootstrap_Example/SSKeychain.framework"
-  install_framework "Pods-iOSBootstrap_Example/TMCache.framework"
-  install_framework "Pods-iOSBootstrap_Example/UIColor_BFPaperColors.framework"
-  install_framework "Pods-iOSBootstrap_Example/UIImage_ImageCompress.framework"
-  install_framework "Pods-iOSBootstrap_Example/iOSBootstrap.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AFNetworking/AFNetworking.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/ArrayUtils/ArrayUtils.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/CocoaAsyncSocket/CocoaAsyncSocket.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/DateTools/DateTools.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/FMDB/FMDB.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/HTKDynamicResizingCell/HTKDynamicResizingCell.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/ProtocolBuffers/ProtocolBuffers.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/QBImagePickerController/QBImagePickerController.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SAMKeychain/SAMKeychain.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SDWebImage/SDWebImage.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SQLCipher/SQLCipher.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/TMCache/TMCache.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/UIColor+BFPaperColors/UIColor_BFPaperColors.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/UIImage+ImageCompress/UIImage_ImageCompress.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/iOSBootstrap/iOSBootstrap.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "Pods-iOSBootstrap_Example/AFNetworkActivityLogger.framework"
-  install_framework "Pods-iOSBootstrap_Example/AFNetworking.framework"
-  install_framework "Pods-iOSBootstrap_Example/ArrayUtils.framework"
-  install_framework "Pods-iOSBootstrap_Example/CocoaAsyncSocket.framework"
-  install_framework "Pods-iOSBootstrap_Example/DateTools.framework"
-  install_framework "Pods-iOSBootstrap_Example/FMDB.framework"
-  install_framework "Pods-iOSBootstrap_Example/HTKDynamicResizingCell.framework"
-  install_framework "Pods-iOSBootstrap_Example/ProtocolBuffers.framework"
-  install_framework "Pods-iOSBootstrap_Example/QBImagePickerController.framework"
-  install_framework "Pods-iOSBootstrap_Example/SDWebImage.framework"
-  install_framework "Pods-iOSBootstrap_Example/SQLCipher.framework"
-  install_framework "Pods-iOSBootstrap_Example/SSKeychain.framework"
-  install_framework "Pods-iOSBootstrap_Example/TMCache.framework"
-  install_framework "Pods-iOSBootstrap_Example/UIColor_BFPaperColors.framework"
-  install_framework "Pods-iOSBootstrap_Example/UIImage_ImageCompress.framework"
-  install_framework "Pods-iOSBootstrap_Example/iOSBootstrap.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AFNetworking/AFNetworking.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/ArrayUtils/ArrayUtils.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/CocoaAsyncSocket/CocoaAsyncSocket.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/DateTools/DateTools.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/FMDB/FMDB.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/HTKDynamicResizingCell/HTKDynamicResizingCell.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/ProtocolBuffers/ProtocolBuffers.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/QBImagePickerController/QBImagePickerController.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SAMKeychain/SAMKeychain.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SDWebImage/SDWebImage.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SQLCipher/SQLCipher.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/TMCache/TMCache.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/UIColor+BFPaperColors/UIColor_BFPaperColors.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/UIImage+ImageCompress/UIImage_ImageCompress.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/iOSBootstrap/iOSBootstrap.framework"
 fi

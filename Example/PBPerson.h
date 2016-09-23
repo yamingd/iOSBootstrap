@@ -10,4 +10,6 @@
 
 @interface PBPerson : NSObject
 
+@property int id;
+
 @end

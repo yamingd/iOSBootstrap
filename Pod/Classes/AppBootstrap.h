@@ -22,6 +22,8 @@
 
 -(BOOL)shouldEnableAPNS;
 
+-(void)application:(UIApplication *)application prepareNetwork:(NSDictionary *)launchOptions;
+
 -(void)application:(UIApplication *)application prepareAPNSToken:(NSDictionary *)launchOptions;
 
 -(void)application:(UIApplication *)application prepareAppSession:(NSDictionary *)launchOptions;

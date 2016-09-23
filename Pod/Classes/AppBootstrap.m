@@ -11,7 +11,7 @@
 #import "AppBootstrap.h"
 #import "AFNetworking.h"
 #import "AFNetworking/AFNetworkActivityIndicatorManager.h"
-#import "AFNetworkActivityLogger/AFNetworkActivityLogger.h"
+#import "BFNetworkActivityLogger.h"
 
 @implementation AppBootstrap
 
@@ -24,13 +24,14 @@
     
     LOG(@"willFinishLaunchingWithOptions");
     
-    [self application:application prepareOpenControllers:launchOptions];
+    [self application:application prepareNetwork:launchOptions];
     [self application:application prepareAppSession:launchOptions];
     [self application:application prepareDatabase:launchOptions];
+    [self application:application prepareAPNSToken:launchOptions];
+    [self application:application prepareComponents:launchOptions];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    [self application:application prepareRootController:launchOptions];
-    
+   
     return YES;
 }
 
@@ -60,12 +61,11 @@
         }
     }
     
-    [self application:application prepareAPNSToken:launchOptions];
-    
     // Set the app badge to 0 when launching
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
     
-    [self application:application prepareComponents:launchOptions];
+    [self application:application prepareRootController:launchOptions];
+    [self application:application prepareOpenControllers:launchOptions];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
@@ -187,13 +187,21 @@
 }
 
 -(void)application:(UIApplication *)application prepareOpenControllers:(NSDictionary *)launchOptions{
-    [[AFNetworkActivityLogger sharedLogger] startLogging];
+    
+}
+
+-(void)application:(UIApplication *)application prepareNetwork:(NSDictionary *)launchOptions{
+#ifdef DEBUG
+    BFNetworkActivityLogger *logger = [BFNetworkActivityLogger sharedLogger];
+    [logger setLevel:BFLoggerLevelDebug];
+    [logger startLogging];
+#endif
+    
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
     
     dispatch_async(kBG_QUEUE, ^{
         [self startNetworkMonitor];
     });
-    
 }
 
 -(void)application:(UIApplication *)application prepareDatabase:(NSDictionary *)launchOptions{

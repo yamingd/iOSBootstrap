@@ -5,8 +5,8 @@
 
 #import "DeviceHelper.h"
 #import "sys/utsname.h"
-#import "SSKeychain.h"
-#import "SSKeychainQuery.h"
+#import "SAMKeychain.h"
+#import "SAMKeychainQuery.h"
 
 @implementation DeviceHelper
 
@@ -96,14 +96,14 @@
 }
 
 + (NSString *)getDeviceUdid{
-    NSString *ouuid = [SSKeychain passwordForService:@"com.inno" account:@"uuid"];
+    NSString *ouuid = [SAMKeychain passwordForService:@"com.inno" account:@"uuid"];
     if (ouuid == nil || [ouuid isEqualToString:@""]) {
         CFUUIDRef uuid = CFUUIDCreate(NULL);
         assert(uuid != NULL);
         CFStringRef uuidStr = CFUUIDCreateString(NULL, uuid);
         ouuid = [NSString stringWithFormat:@"%@", uuidStr];
         ouuid = [[ouuid stringByReplacingOccurrencesOfString:@"-" withString:@""] lowercaseString];
-        [SSKeychain setPassword:ouuid forService:@"com.inno" account:@"uuid"];
+        [SAMKeychain setPassword:ouuid forService:@"com.inno" account:@"uuid"];
     }
     ouuid = [[ouuid stringByReplacingOccurrencesOfString:@"-" withString:@""] lowercaseString];
     return ouuid;

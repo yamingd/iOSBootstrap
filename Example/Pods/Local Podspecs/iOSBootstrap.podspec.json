@@ -1,6 +1,6 @@
 {
   "name": "iOSBootstrap",
-  "version": "1.4.5",
+  "version": "1.5.6",
   "summary": "utility, security, delegate wrapper, protobuf support, realm support.",
   "description": "utility, security, delegate wrapper, protobuf support, realm support etc.",
   "homepage": "https://github.com/yamingd/iOSBootstrap",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/yamingd/iOSBootstrap.git",
-    "tag": "1.4.5"
+    "tag": "1.5.6"
   },
   "platforms": {
     "ios": "8.0"
@@ -21,23 +21,15 @@
     "Pod/Classes/**/*.proto",
     "Pod/Classes/**/*.sh"
   ],
-  "resource_bundles": {
-    "iOSBootstrap": [
-      "Pod/Assets/*.png"
-    ]
-  },
   "public_header_files": "Pod/Classes/**/*.h",
   "dependencies": {
     "AFNetworking": [
-      "~> 2.6"
-    ],
-    "AFNetworkActivityLogger": [
-      "~> 2.0"
+      "~> 3.0"
     ],
     "SDWebImage": [
 
     ],
-    "SSKeychain": [
+    "SAMKeychain": [
 
     ],
     "TMCache": [

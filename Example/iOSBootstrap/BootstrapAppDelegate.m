@@ -45,7 +45,7 @@
 
 - (void)application:(UIApplication *)application prepareAppSession:(NSDictionary *)launchOptions{
     [super application:application prepareAppSession:launchOptions];
-    [[AppSecurity instance] config:kAppCookieId salt:kAppCookieSalt];
+    [[AppSecurity instance] config:kAppCookieId salt:kAppCookieSalt aesSeed:kAppCookieSalt];
     [[APIClient shared] initWithApiBase:kAppAPIBaseUrl];
 }
 - (void)application:(UIApplication *)application prepareComponents:(NSDictionary *)launchOptions{
