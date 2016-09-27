@@ -96,7 +96,7 @@ static void * AFNetworkRequestStartDate = &AFNetworkRequestStartDate;
     
     switch (self.level) {
         case BFLoggerLevelDebug:
-            NSLog(@"\n ===================== HTTP Method ===================== \n %@ \n ===================== HTTP URL ===================== \n '%@': \n ===================== HTTP HeaderFields ===================== \n %@ \n ===================== HTTPBody ===================== \n %@ \n ===================== Logger End ===================== \n", [request HTTPMethod], [[request URL] absoluteString], [request allHTTPHeaderFields], body);
+            NSLog(@"\n ===================== HTTP Method ===================== \n %@ \n ===================== HTTP URL ===================== \n '%@': \n ===================== HTTP HeaderFields ===================== \n %@ \n ===================== HTTPBody ===================== \n ===================== Logger End ===================== \n", [request HTTPMethod], [[request URL] absoluteString], [request allHTTPHeaderFields]);
             break;
         case BFLoggerLevelInfo:
             NSLog(@"%@ '%@'", [request HTTPMethod], [[request URL] absoluteString]);

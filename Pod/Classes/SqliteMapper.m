@@ -235,7 +235,9 @@
         NSEnumerator *itor = [pkValues objectEnumerator];
         id pk = itor.nextObject;
         id item = [self get:pk withRef:ref];
-        [result addObject:item];
+        if (item) {
+            [result addObject:item];
+        }
         return result;
     }else{
         NSEnumerator *itor = [pkValues objectEnumerator];
