@@ -20,6 +20,4 @@
 
 - (BOOL)isHasCamera;
 
-- (NSData *)compressImageToDefaultFormat:(UIImage *)image;
-
 @end

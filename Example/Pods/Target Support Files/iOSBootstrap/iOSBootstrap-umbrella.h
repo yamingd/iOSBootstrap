@@ -4,6 +4,7 @@
 #import "AppSecurity.h"
 #import "AppSession.h"
 #import "BetterNSLog.h"
+#import "BFNetworkActivityLogger.h"
 #import "boost.h"
 #import "NSData+CommonCrypto.h"
 #import "NSData+Ext.h"
