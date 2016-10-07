@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "iOSBootstrap"
-  s.version          = "1.5.8"
+  s.version          = "1.5.9"
   s.summary          = "utility, security, delegate wrapper, protobuf support, realm support."
 
 # This description is used to generate tags and improve search results.
@@ -41,7 +41,6 @@ Pod::Spec.new do |s|
 
   # s.frameworks = 'UIKit', 'MapKit'
   s.dependency 'AFNetworking', '~> 3.0'
-  # s.dependency 'AFNetworkActivityLogger', '~> 2.0'
   s.dependency 'SDWebImage'
   s.dependency 'SAMKeychain'
   s.dependency 'TMCache'

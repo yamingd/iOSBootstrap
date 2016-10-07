@@ -14,7 +14,7 @@
 
 @end
 
-@interface UIViewController(ImagePicker) <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate>
+@interface UIViewController(ImagePicker) <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 -(void)openImageSelectViews;
 
