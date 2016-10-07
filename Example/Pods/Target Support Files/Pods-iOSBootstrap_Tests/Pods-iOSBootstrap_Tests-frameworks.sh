@@ -97,7 +97,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/SQLCipher/SQLCipher.framework"
   install_framework "$BUILT_PRODUCTS_DIR/TMCache/TMCache.framework"
   install_framework "$BUILT_PRODUCTS_DIR/UIColor+BFPaperColors/UIColor_BFPaperColors.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/UIImage+ImageCompress/UIImage_ImageCompress.framework"
   install_framework "$BUILT_PRODUCTS_DIR/iOSBootstrap/iOSBootstrap.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -114,6 +113,5 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/SQLCipher/SQLCipher.framework"
   install_framework "$BUILT_PRODUCTS_DIR/TMCache/TMCache.framework"
   install_framework "$BUILT_PRODUCTS_DIR/UIColor+BFPaperColors/UIColor_BFPaperColors.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/UIImage+ImageCompress/UIImage_ImageCompress.framework"
   install_framework "$BUILT_PRODUCTS_DIR/iOSBootstrap/iOSBootstrap.framework"
 fi

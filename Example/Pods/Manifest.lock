@@ -22,7 +22,7 @@ PODS:
   - FMDB/SQLCipher (2.6.2):
     - SQLCipher
   - HTKDynamicResizingCell (0.0.2)
-  - iOSBootstrap (1.5.8):
+  - iOSBootstrap (1.6.1):
     - AFNetworking (~> 3.0)
     - ArrayUtils
     - CocoaAsyncSocket
@@ -35,7 +35,6 @@ PODS:
     - SDWebImage
     - TMCache
     - UIColor+BFPaperColors
-    - UIImage+ImageCompress
   - ProtocolBuffers (1.9.11)
   - QBImagePickerController (3.4.0)
   - SAMKeychain (1.5.2)
@@ -49,7 +48,6 @@ PODS:
     - SQLCipher/common
   - TMCache (2.1.0)
   - UIColor+BFPaperColors (1.7.6)
-  - UIImage+ImageCompress (0.0.1)
 
 DEPENDENCIES:
   - iOSBootstrap (from `../`)
@@ -65,7 +63,7 @@ SPEC CHECKSUMS:
   DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   HTKDynamicResizingCell: 9358514816f0737a8d20329617ee126a1498357c
-  iOSBootstrap: d70fb4d85fc577214c4a985af743c7aa61ace6d3
+  iOSBootstrap: ee1922ecb112ac750a61b047e886d60b19214cad
   ProtocolBuffers: d509225eb2ea43d9582a59e94348fcf86e2abd65
   QBImagePickerController: d54cf93db6decf26baf6ed3472f336ef35cae022
   SAMKeychain: 1865333198217411f35327e8da61b43de79b635b
@@ -73,8 +71,7 @@ SPEC CHECKSUMS:
   SQLCipher: 4c768761421736a247ed6cf412d9045615d53dff
   TMCache: 95ebcc9b3c7e90fb5fd8fc3036cba3aa781c9bed
   UIColor+BFPaperColors: 37e7b48fa86b29ff2e97a11208ab9cb5ab0b883d
-  UIImage+ImageCompress: 6b38489f38075d569d9f25d72af7ecf5c84c1057
 
 PODFILE CHECKSUM: fd1d563ba3f84e7febdb59a60af4f1793914c882
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.0.beta.2

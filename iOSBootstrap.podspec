@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "iOSBootstrap"
-  s.version          = "1.6.0"
+  s.version          = "1.6.1"
   s.summary          = "utility, security, delegate wrapper, protobuf support, realm support."
 
 # This description is used to generate tags and improve search results.
@@ -48,11 +48,9 @@ Pod::Spec.new do |s|
   s.dependency 'ProtocolBuffers', '~> 1.9'
   s.dependency 'CocoaAsyncSocket'
   s.dependency 'HTKDynamicResizingCell'
-  s.dependency 'UIImage+ImageCompress'
   s.dependency 'ArrayUtils'
   s.dependency 'QBImagePickerController'
   s.dependency 'DateTools', '~> 1.7'
   s.dependency 'FMDB/SQLCipher'
-  s.dependency 'UIImage+ImageCompress'
 
 end

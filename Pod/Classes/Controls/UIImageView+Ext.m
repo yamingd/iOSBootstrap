@@ -23,7 +23,7 @@
         return;
     }
     if ([urlOrName hasPrefix:@"http://"]) {
-        [self sd_setImageWithURL:[NSURL URLWithString:urlOrName] placeholderImage:holder];
+        [self sd_setImageWithURL:[NSURL URLWithString:urlOrName] placeholderImage:holder options:SDWebImageProgressiveDownload];
     }else{
         [self setImage:[UIImage imageNamed:urlOrName]];
     }
@@ -38,7 +38,7 @@
         return;
     }
     if ([urlOrName hasPrefix:@"http://"]) {
-        [self sd_setImageWithURL:[NSURL URLWithString:urlOrName] placeholderImage:holder];
+        [self sd_setImageWithURL:[NSURL URLWithString:urlOrName] placeholderImage:holder options:SDWebImageProgressiveDownload];
     }else{
         [self setImage:[UIImage imageNamed:urlOrName]];
     }

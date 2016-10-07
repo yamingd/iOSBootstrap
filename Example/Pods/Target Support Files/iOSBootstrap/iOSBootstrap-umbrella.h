@@ -17,6 +17,7 @@
 #import "HYCircleLoadingView.h"
 #import "LPlaceholderTextView.h"
 #import "MBProgressHUD.h"
+#import "UIImage+ImageCompress.h"
 #import "UIImage+ImageEffects.h"
 #import "UIImageEdView.h"
 #import "UIImageView+Ext.h"
