@@ -72,7 +72,7 @@
     
     UIAlertAction* action3 = [UIAlertAction
                               actionWithTitle:@"取消"
-                              style:UIAlertActionStyleDefault
+                              style:UIAlertActionStyleCancel
                               handler:^(UIAlertAction * action)
                               {
                                   [view dismissViewControllerAnimated:YES completion:nil];
