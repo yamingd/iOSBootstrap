@@ -28,6 +28,8 @@
 #import "UIViewController+SearchBar.h"
 #import "DeviceHelper.h"
 #import "EventPoster.h"
+#import "FMEncryptDatabase.h"
+#import "FMEncryptDatabaseQueue.h"
 #import "AFProtobufResponseSerializer.h"
 #import "APIClient.h"
 #import "NSDate+Helper.h"

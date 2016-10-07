@@ -20,6 +20,8 @@
 
 -(NSString*)getAppNameString;
 
+-(NSData*)getDatabaseSalt;
+
 -(BOOL)shouldEnableAPNS;
 
 -(void)application:(UIApplication *)application prepareNetwork:(NSDictionary *)launchOptions;

@@ -13,7 +13,7 @@
 
 @property (strong, nonatomic)NSString* path;
 @property (strong, nonatomic)NSString* originalName;
-@property (strong, nonatomic)FMDatabaseQueue* dbQueue;
+@property (strong, nonatomic)FMEncryptDatabaseQueue* dbQueue;
 @property (strong, nonatomic)NSMutableDictionary* allTables;
 
 @end
@@ -84,7 +84,7 @@
         }
         
         NSString* fileName = [self dbFileName];
-        _dbQueue = [FMDatabaseQueue databaseQueueWithPath:fileName];
+        _dbQueue = [FMEncryptDatabaseQueue databaseQueueWithPath:fileName encryptKey:_salt];
         LOG("Sqlite Open: %@", fileName);
     }
 }

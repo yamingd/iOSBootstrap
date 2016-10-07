@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "FMDB.h"
+#import "FMEncryptDatabase.h"
+#import "FMEncryptDatabaseQueue.h"
 
 @class SqliteMapper;
 

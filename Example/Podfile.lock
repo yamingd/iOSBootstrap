@@ -22,7 +22,7 @@ PODS:
   - FMDB/SQLCipher (2.6.2):
     - SQLCipher
   - HTKDynamicResizingCell (0.0.2)
-  - iOSBootstrap (1.6.1):
+  - iOSBootstrap (1.6.2):
     - AFNetworking (~> 3.0)
     - ArrayUtils
     - CocoaAsyncSocket
@@ -63,7 +63,7 @@ SPEC CHECKSUMS:
   DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   HTKDynamicResizingCell: 9358514816f0737a8d20329617ee126a1498357c
-  iOSBootstrap: ee1922ecb112ac750a61b047e886d60b19214cad
+  iOSBootstrap: 2df69a3538f752998c9058a18c08c2f67e4c28bf
   ProtocolBuffers: d509225eb2ea43d9582a59e94348fcf86e2abd65
   QBImagePickerController: d54cf93db6decf26baf6ed3472f336ef35cae022
   SAMKeychain: 1865333198217411f35327e8da61b43de79b635b
