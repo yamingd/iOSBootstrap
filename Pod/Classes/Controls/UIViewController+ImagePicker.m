@@ -22,26 +22,7 @@
 
 -(void)openImageSelectViews
 {
-    //选择头像
-//    UIActionSheet *actionSheet = nil;
-//    if ([self isHasCamera]) {
-//        actionSheet = [[UIActionSheet alloc] initWithTitle:nil
-//                                                  delegate:self
-//                                         cancelButtonTitle:@"取消"
-//                                    destructiveButtonTitle:nil
-//                                         otherButtonTitles:@"拍照", @"从手机相册选择", nil];
-//    } else {
-//        actionSheet = [[UIActionSheet alloc] initWithTitle:nil
-//                                                  delegate:self
-//                                         cancelButtonTitle:@"取消"
-//                                    destructiveButtonTitle:nil
-//                                         otherButtonTitles:@"从手机相册选择", nil];
-//    }
-//    if(actionSheet)
-//    {
-//        [actionSheet showInView:self.view];
-//    }
-    
+
     UIAlertController * view=   [UIAlertController
                                  alertControllerWithTitle:nil
                                  message:nil
@@ -96,8 +77,6 @@
         ALAuthorizationStatus author = [ALAssetsLibrary authorizationStatus];
         if(author == ALAuthorizationStatusRestricted || author == ALAuthorizationStatusDenied){
             NSString* msg = [NSString stringWithFormat:@"请到 “设置－%@－照片” 选项中，允许%@访问您手机的照片。", title, title];
-            // UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"无法选择照片" message:msg delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil];
-            // [av show];
             [self picker_showAlertMessage:@"无法选择照片" message:msg];
             return NO;
         }
@@ -106,52 +85,12 @@
         AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:mediaType];
         if(authStatus == ALAuthorizationStatusRestricted || authStatus == ALAuthorizationStatusDenied){
             NSString* msg = [NSString stringWithFormat:@"请到 “设置－%@－相机” 选项中，允许%@访问您手机的相机。", title, title];
-//            UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"无法拍照" message:msg delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil];
-//            [av show];
             [self picker_showAlertMessage:@"无法拍照" message:msg];
             return NO;
         }
     }
     return YES;
 }
-
-//- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-//{
-//    if (buttonIndex == actionSheet.cancelButtonIndex) {
-//        return;
-//    } else if (buttonIndex == actionSheet.destructiveButtonIndex) {
-//        return;
-//    }
-//    
-//    WEAKSELF_DEFINE
-//    
-//    // 访问权限判断
-//    if (buttonIndex == actionSheet.firstOtherButtonIndex && [weakSelf isHasCamera]) {
-//        if (![self assertAuthIsAvailible:UIImagePickerControllerSourceTypeCamera]) {
-//            return;
-//        }
-//    } else {
-//        if (![self assertAuthIsAvailible:UIImagePickerControllerSourceTypePhotoLibrary]) {
-//            return;
-//        }
-//    }
-//    
-//    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
-//    imagePicker.delegate = weakSelf;
-//    imagePicker.allowsEditing = YES;
-//    imagePicker.view.backgroundColor = [UIColor clearColor];
-//    
-//    if (buttonIndex == actionSheet.firstOtherButtonIndex && [weakSelf isHasCamera]) {
-//        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-//        imagePicker.cameraDevice = UIImagePickerControllerCameraDeviceFront;
-//    } else {
-//        imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-//    }
-//    
-//    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-//        [weakSelf presentViewController:imagePicker animated:YES completion:NULL];
-//    }];
-//}
 
 - (void)picker_showAlertMessage:(NSString*)title message:(NSString*)message{
     
@@ -188,10 +127,17 @@
     imagePicker.view.backgroundColor = [UIColor clearColor];
     imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
     imagePicker.cameraDevice = UIImagePickerControllerCameraDeviceRear;
+    [self picker_config:imagePicker];
     
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         [weakSelf presentViewController:imagePicker animated:YES completion:NULL];
     }];
+}
+
+- (void)picker_config:(UIImagePickerController*)controller{
+    if ([self respondsToSelector:@selector(pickerConfigController:)]) {
+        [self performSelector:@selector(pickerConfigController:) withObject:controller];
+    }
 }
 
 - (void)picker_openImagePickerWithPhotoLibrary{
@@ -206,6 +152,8 @@
     imagePicker.allowsEditing = YES;
     imagePicker.view.backgroundColor = [UIColor clearColor];
     imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    [self picker_config:imagePicker];
+    
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         [weakSelf presentViewController:imagePicker animated:YES completion:NULL];
     }];

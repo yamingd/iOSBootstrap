@@ -10,13 +10,17 @@
 
 @protocol ImagePickerDelegate <NSObject>
 
--(void)imagePickerDidSelecteImages:(NSArray*)images;
+- (void)imagePickerDidSelecteImages:(NSArray*)images;
+
+@optional
+
+- (void)pickerConfigController:(UIImagePickerController*)controller;
 
 @end
 
 @interface UIViewController(ImagePicker) <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
--(void)openImageSelectViews;
+- (void)openImageSelectViews;
 
 - (BOOL)isHasCamera;
 
