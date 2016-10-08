@@ -164,7 +164,14 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    UIImage *selectedImage = [info objectForKey:UIImagePickerControllerEditedImage];
+    
+    UIImage *selectedImage = nil;
+    if (picker.allowsEditing) {
+        selectedImage = [info objectForKey:UIImagePickerControllerEditedImage];
+    }else{
+        selectedImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+    }
+    
     NSData* imgData = [UIImage compressImage:selectedImage compressRatio:.7 maxCompressRatio:.5];
     NSString* iconName = [NSString stringWithFormat:@"%ld.jpeg", [NSNumber numberWithDouble:[NSDate date].timeIntervalSince1970].longValue];
     
