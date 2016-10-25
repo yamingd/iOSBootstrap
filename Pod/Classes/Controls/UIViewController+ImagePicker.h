@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <objc/runtime.h>
 
 @protocol ImagePickerDelegate <NSObject>
 
@@ -19,6 +20,8 @@
 @end
 
 @interface UIViewController(ImagePicker) <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+
+@property (strong, nonatomic) NSString* pickerTag;
 
 - (void)openImageSelectViews;
 

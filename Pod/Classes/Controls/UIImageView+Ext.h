@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIImageView+WebCache.h"
 
 @interface UIImageView (Ext)
 
@@ -15,6 +16,10 @@
 
 - (void)setImageWithHolder:(NSString *)urlOrName
          placeholder:(UIImage *)holder;
+
+- (void)setImageWith:(NSString *)urlOrName
+        placeholder:(NSString *)holderName
+        completed:(SDWebImageCompletionBlock)completedBlock;
 
 - (void)circleCover;
 - (void)roundCover:(float)radius;

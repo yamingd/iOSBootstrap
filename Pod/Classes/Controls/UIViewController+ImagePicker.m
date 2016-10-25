@@ -15,6 +15,8 @@
 
 @implementation UIViewController(ImagePicker)
 
+ADD_DYNAMIC_PROPERTY(NSString*, pickerTag, setPickerTag);
+
 - (BOOL)isHasCamera
 {
     return ([UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceRear] || [UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceFront]);

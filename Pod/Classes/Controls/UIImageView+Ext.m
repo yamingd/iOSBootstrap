@@ -7,7 +7,6 @@
 //
 
 #import "UIImageView+Ext.h"
-#import "UIImageView+WebCache.h"
 
 @implementation UIImageView (Ext)
 
@@ -39,6 +38,26 @@
     }
     if ([urlOrName hasPrefix:@"http://"]) {
         [self sd_setImageWithURL:[NSURL URLWithString:urlOrName] placeholderImage:holder options:SDWebImageProgressiveDownload];
+    }else{
+        [self setImage:[UIImage imageNamed:urlOrName]];
+    }
+}
+
+- (void)setImageWith:(NSString *)urlOrName
+         placeholder:(NSString *)holderName
+           completed:(SDWebImageCompletionBlock)completedBlock{
+    
+    
+    UIImage* holder = nil;
+    if (holderName) {
+        holder = [UIImage imageNamed:holderName];
+    }
+    if (urlOrName.length == 0) {
+        [self setImage:holder];
+        return;
+    }
+    if ([urlOrName hasPrefix:@"http://"]) {
+        [self sd_setImageWithURL:[NSURL URLWithString:urlOrName] placeholderImage:holder options:SDWebImageProgressiveDownload completed:completedBlock];
     }else{
         [self setImage:[UIImage imageNamed:urlOrName]];
     }
