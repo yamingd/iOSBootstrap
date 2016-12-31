@@ -23,7 +23,7 @@
 
 @property (strong, nonatomic) NSString* pickerTag;
 
-- (void)openImageSelectViews;
+- (void)openImageSelectViews:(UIView*)sender;
 
 - (BOOL)isHasCamera;
 

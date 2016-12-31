@@ -22,7 +22,7 @@ ADD_DYNAMIC_PROPERTY(NSString*, pickerTag, setPickerTag);
     return ([UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceRear] || [UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceFront]);
 }
 
--(void)openImageSelectViews
+-(void)openImageSelectViews:(UIView*)sender
 {
 
     UIAlertController * view=   [UIAlertController
@@ -65,7 +65,11 @@ ADD_DYNAMIC_PROPERTY(NSString*, pickerTag, setPickerTag);
     
     [view addAction:action2];
     [view addAction:action3];
-    
+    if (sender) {
+        UIPopoverPresentationController *popPresenter = [view popoverPresentationController];
+        popPresenter.sourceView = sender;
+        popPresenter.sourceRect = sender.bounds;
+    }
     [self presentViewController:view animated:YES completion:nil];
 }
 
